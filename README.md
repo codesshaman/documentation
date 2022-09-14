@@ -9,6 +9,7 @@
     * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
     * [Makefile для docker-compose](https://github.com/codesshaman/documentation/#ComposeMakefile "ComposeMakefile")
     * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
+  - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
@@ -86,6 +87,13 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Команды docker в режиме роя
 
+***
+### Mkcert
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Получение самоподписного сертификата при помощи mkcert
+``mkcert jleslee.42.fr``<br>
+``mv jleslee.42.fr-key.pem jleslee.42.fr.key``<br>
+``mv jleslee.42.fr.pem jleslee.42.fr.crt``<br>
 ***
 Вы можете создавать свои комбинации!
 ### Инструкции
