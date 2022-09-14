@@ -60,7 +60,7 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Makefile для docker-compose
 ```
-name = docker_simple_nginx_html_with_Makefile
+name = docker_configuration
 all:
 	@printf "Запуск конфигурации ${name}...\n"
 	@docker-compose -f ./docker-compose.yml up -d
