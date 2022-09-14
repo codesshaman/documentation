@@ -1,16 +1,14 @@
 # Документация
 
 ### Оглавление
-+ [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
+#### Linux
++ [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
-### Linux
-+ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")</br>
-[Проверить свободные порты](../blob/main/linux/bizy_ports.md)
+### Ports
+# Проверяем свободные порты
 
-"Блоки Примечание и Предупреждение")
-+ [Упоминание человека или организации](https://github.com/AndreyKozhev/Markdown-format#%D1%83%D0%BF%D0%BE%D0%BC%D0%B8%D0%BD%D0%B0%D0%BD%D0%B8%D0%B5-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%B8%D0%BB%D0%B8-%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8 "Упоминание челове6ка или организации")
 ### Заголовки
 Есть *6* уровней заголовков.
 ```
