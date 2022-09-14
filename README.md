@@ -6,7 +6,8 @@
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
 ### Linux
-+ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")</br>
+
 [Проверить свободные порты](../blob/main/linux/bizy_ports.md)
 
 "Блоки Примечание и Предупреждение")
