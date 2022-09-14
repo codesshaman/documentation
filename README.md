@@ -2,7 +2,7 @@
 
 ## Оглавление
 + [Linux](https://github.com/AndreyKozhev/Markdown-format#заголовки "Заголовки")
-++ [Выделение](https://github.com/AndreyKozhev/Markdown-format#выделение "Выделение")
++ [Выделение](https://github.com/AndreyKozhev/Markdown-format#выделение "Выделение")
 + [Списки](https://github.com/AndreyKozhev/Markdown-format#списки "Списки")
 + [Ссылки](https://github.com/AndreyKozhev/Markdown-format#ссылки "Ссылки")
 + [Изображения](https://github.com/AndreyKozhev/Markdown-format#изображения "Изображения")
