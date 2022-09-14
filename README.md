@@ -6,7 +6,7 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
-****
+***
 
 ### Ports
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
