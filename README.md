@@ -2,8 +2,8 @@
 
 ### Оглавление
 + [Linux](https://github.com/codesshaman/documentation/#Ports "Ports")
-- [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
-- [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
+  - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
+  - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
