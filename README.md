@@ -7,6 +7,7 @@
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
+    * [Makefile для docker-compose](https://github.com/codesshaman/documentation/#ComposeMakefile "ComposeMakefile")
     * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
@@ -54,6 +55,32 @@
 ### Docker-compose
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Команды docker-compose
+
+### ComposeMakefile
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Makefile для docker-compose
+```
+name = docker_simple_nginx_html_with_Makefile
+all:
+	@printf "Запуск конфигурации ${name}...\n"
+	@docker-compose -f ./docker-compose.yml up -d
+down:
+	@printf "Остановка конфигурации ${name}...\n"
+	@docker-compose -f ./docker-compose.yml down
+re:
+	@printf "Пересборка конфигурации ${name}...\n"
+	@docker-compose -f ./docker-compose.yml up -d --build
+clean: down
+	@printf "Очистка конфигурации ${name}...\n"
+	@docker system prune --a
+fclean:
+	@printf "Полная очистка всех конфигураций docker\n"
+#	@docker stop $$(docker ps -qa)
+#	@docker system prune --all --force --volumes
+#	@docker network prune --force
+#	@docker volume prune --force
+.PHONY	: all down re clean fclean
+```
 
 ### Docker-swarm
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
