@@ -6,9 +6,27 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
+****
+
 ### Ports
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 # Проверяем свободные порты
+
+#### Вывод информации о портах через netstat
+
+dnf install net-tools
+netstat -pnltu
+Здесь:
+
+-p - вывод ID процесса и его имени;
+-n - вывод адресов;
+-l - вывод сокетов;
+-t - вывод TCP соединений;
+-u - вывод UDP соединений.
+Найти сервис, запущенный на определенном порту можно так:
+
+netstat -pnltu | grep -i "22"
+
 
 ### Заголовки
 Есть *6* уровней заголовков.
