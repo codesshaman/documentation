@@ -10,16 +10,35 @@
 
 ### Ports
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
-# Проверяем свободные порты
+> Утиллиты для проверки портов
 
 #### netstat
 ``dnf install net-tools``</br>
 ``netstat -pnltu``</br>
 ``netstat -pnltu | grep -i "22"``</br>
+``netstat -tulpn | grep LISTEN``</br>
 #### ss
 ``ss -lntu``</br>
-
+``ss -lntu -p``</br>
+#### nmap
+``dnf install nmap``</br>
+``nmap -n -PN -sT -sU -p- ВашIP``</br>
+#### lsof
+``lsof -i``</br>
+``lsof -i 80``</br>
 ***
+### Tmux
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Удобное использование терминального пространства при помощи tmux
+
+``tmux new-session -s test`` - создать сессию с названием test</br>
+``Ctrl+b %`` - разбить терминал по горизонтали</br>
+``Ctrl+b "`` - разбить терминал по вертикали</br>
+``Ctrl+b x`` - закрыть окно терминала</br>
+``Ctrl+b d`` - отключиться от рабочего терминала</br>
+``tmux attach -t test`` - присоединиться к сессии с названием test</br>
+``tmux ls`` - список сессий</br>
+
 
 ### Заголовки
 Есть *6* уровней заголовков.
