@@ -14,9 +14,9 @@
 
 #### Вывод информации о портах через netstat
 
-``dnf install net-tools``
-``netstat -pnltu``
-``netstat -pnltu | grep -i "22"``
+``dnf install net-tools``</br>
+``netstat -pnltu``</br>
+``netstat -pnltu | grep -i "22"``</br>
 
 ***
 
