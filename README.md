@@ -1,9 +1,8 @@
 # Документация
 
 [TOC] (Оглавление)
-#[Headers](#headers)
-#[Emphasis](#emphasis)
-##[Emphasis2](#emphasis)
+### Добро пожаловать в редактор Markdown
+#### Новые изменения
 
 Linux:
 
