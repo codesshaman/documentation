@@ -1,6 +1,7 @@
-# documentation
-All documentation about used technologies
+# Документация
+
 [Оглавление][Оглавление]
+
 [Оглавление][Оглавление]
 
 Linux:
