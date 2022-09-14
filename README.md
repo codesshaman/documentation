@@ -4,8 +4,10 @@
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
-  * [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
-    * [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
+  - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
+    * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
+    * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
+    * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
@@ -49,7 +51,13 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Команды чистого докера
 
+### Docker-compose
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Команды docker-compose
 
+### Docker-swarm
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Команды docker в режиме роя
 
 ***
 Вы можете создавать свои комбинации!
