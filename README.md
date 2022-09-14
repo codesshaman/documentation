@@ -12,11 +12,12 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 # Проверяем свободные порты
 
-#### Вывод информации о портах через netstat
-
+#### netstat
 ``dnf install net-tools``</br>
 ``netstat -pnltu``</br>
 ``netstat -pnltu | grep -i "22"``</br>
+#### ss
+``ss -lntu``</br>
 
 ***
 
