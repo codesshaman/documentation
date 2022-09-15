@@ -13,6 +13,7 @@
     * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
   - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
+  - [Просмотр логов lnav](https://github.com/codesshaman/documentation/#Lnav "Lnav")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
@@ -25,8 +26,13 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Блокноты, просмотрщики и т.д.
 
-
-
+``nano имя_файла`` - блокнот, аналоги - vi, vim<br>
+``cat имя_файла`` - простой вывод в консоль<br>
+``less имя_файла`` - листалка (выход на q)<br>
+``tail -f имя_файла`` - вывод последних 10 строк с обновлением данных<br>
+``tail -n 3 имя_файла`` - вывод последних 3 строк с обновлением данных<br>
+``tail -f -s 5 /var/log/syslog`` - просмотр логов с обновлением каждые 5 секунд<br>
+``tail -f -s 50 /var/log/syslog | grep err`` - сортировка с выводом только ошибок<br> 
 ***
 ### Ports
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
@@ -144,6 +150,16 @@ fclean:
 
 [Просматривать в блокнотах](https://github.com/codesshaman/documentation/#Notes "Notes") * 
 [Ролик в youtube](https://www.youtube.com/watch?v=p7BNIBFsgPM)
+***
+### Lnav
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Утиллита для просмотра логов
+
+ ***Установка***<br>
+ ``sudo apt install lnav``<br>
+ ***Использование***<br>
+``sudo lnav`` - просмотр syslog<br>
+``sudo lnav /var/log/auth.log /var/log/dpkg.log`` - просмотр нескольких конкретных логов<br>
 ***
 Вы можете создавать свои комбинации!
 ### Инструкции
