@@ -2,6 +2,7 @@
 
 ### Оглавление
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
+  - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
@@ -10,6 +11,7 @@
     * [Makefile для docker-compose](https://github.com/codesshaman/documentation/#ComposeMakefile "ComposeMakefile")
     * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
+  - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
@@ -18,6 +20,13 @@
 ### Linux
 > Утиллиты linux
 
+### Notes
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Утиллиты для проверки портов
+
+Блокноты, просмотрщики и т.д.
+
+***
 ### Ports
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Утиллиты для проверки портов
@@ -109,6 +118,21 @@ fclean:
 ``mkcert localhost``<br>
 ``mv localhost-key.pem localhost.key``<br>
 ``mv localhost.pem localhost.crt``<br>
+***
+### Logs
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Логи linux
+
+Основная папка логов: **/var/log**
+
+Файл лога  |  Назначение
+------ | ------
+**syslog** | главный системный лог
+**auth.log** | все попытки входа на сервер + ip
+**dmesg** | лог драйверов
+**dpkg.log** | лог менеджера пакетов
+**faillog** | лог неудачных попыток входа в систему
++ [Просматривать в блокнотах](https://github.com/codesshaman/documentation/#Notes "Notes")
 ***
 Вы можете создавать свои комбинации!
 ### Инструкции
