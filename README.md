@@ -4,6 +4,7 @@
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
+  - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "AboutUsers")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
@@ -22,9 +23,9 @@
 
 ### Notes
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
-> Утиллиты для проверки портов
+> Блокноты, просмотрщики и т.д.
 
-Блокноты, просмотрщики и т.д.
+
 
 ***
 ### Ports
@@ -45,6 +46,17 @@
 #### lsof
 ``lsof -i``</br>
 ``lsof -i 80``</br>
+***
+### AboutUsers
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Просмотр информации о пользователях и сессиях
+**who** - кто на данный момент находится в системе
+
+**last** - когда и насколько пользователь заходил в систему
+
+**last** ***username***  - информация по конкретному пользователю
+
+**lastlog** - все пользователи с датами последнего входа
 ***
 ### Tmux
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
