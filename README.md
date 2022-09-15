@@ -142,7 +142,7 @@ fclean:
 **dpkg.log** | лог менеджера пакетов
 **faillog** | лог неудачных попыток входа в систему
 
-[Просматривать в блокнотах](https://github.com/codesshaman/documentation/#Notes "Notes")
+[Просматривать в блокнотах](https://github.com/codesshaman/documentation/#Notes "Notes") * 
 [Ролик в youtube](https://www.youtube.com/watch?v=p7BNIBFsgPM)
 ***
 Вы можете создавать свои комбинации!
