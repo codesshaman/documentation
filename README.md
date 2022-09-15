@@ -92,9 +92,23 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Получение самоподписного сертификата при помощи mkcert
 
-``mkcert jleslee.42.fr``<br>
-``mv jleslee.42.fr-key.pem jleslee.42.fr.key``<br>
-``mv jleslee.42.fr.pem jleslee.42.fr.crt``<br>
+#### Установка:
+
+``sudo apt install -y wget curl libnss3-tools``<br>
+``curl -s https://api.github.com/repos/FiloSottile/mkcert/releases/latest| grep browser_download_url | grep linux-amd64 | cut -d '"' -f 4 | wget -qi -``<br>
+``mv mkcert-v*-linux-amd64 mkcer``<br>
+``chmod a+x mkcert``<br>
+``sudo mv mkcert /usr/local/bin/``<br>
+
+#### Проверка:
+
+``mkcert --version``
+
+#### Генерация:
+
+``mkcert  localhost``<br>
+``mv localhost-key.pem localhost.key``<br>
+``mv localhost.pem localhost.crt``<br>
 ***
 Вы можете создавать свои комбинации!
 ### Инструкции
