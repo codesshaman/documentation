@@ -106,7 +106,7 @@ fclean:
 
 #### Генерация:
 
-``mkcert  localhost``<br>
+``mkcert localhost``<br>
 ``mv localhost-key.pem localhost.key``<br>
 ``mv localhost.pem localhost.crt``<br>
 ***
