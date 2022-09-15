@@ -140,7 +140,7 @@ fclean:
 **auth.log** | все попытки входа на сервер + ip
 **dmesg** | лог драйверов
 **dpkg.log** | лог менеджера пакетов
-**faillog** | лог неудачных попыток входа в систему
+**faillog** | лог неудачных попыток входа в систему<br>
 [Просматривать в блокнотах](https://github.com/codesshaman/documentation/#Notes "Notes")
 [Ролик в youtube](https://www.youtube.com/watch?v=p7BNIBFsgPM)
 ***
