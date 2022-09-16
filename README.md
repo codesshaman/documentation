@@ -76,8 +76,8 @@
 ``Ctrl+b p`` - переключиться на предыдущее окно</br>
 ``tmux attach -t test`` - присоединиться к сессии с названием test</br>
 ``tmux ls`` - список сессий</br>
-``tmux kill-session -t test`` - стереть сессию
-``tmux source-file ~/.tmux.conf`` - подсунуть конфиг
+``tmux kill-session -t test`` - стереть сессию</br>
+``tmux source-file ~/.tmux.conf`` - подсунуть конфиг</br>
 Содержимое конфига для включения мыши и сохранения сессий:
 ```
 set -g mouse on
