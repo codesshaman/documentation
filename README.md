@@ -78,6 +78,13 @@
 ``tmux ls`` - список сессий</br>
 ``tmux kill-session -t test`` - стереть сессию
 ``tmux source-file ~/.tmux.conf`` - подсунуть конфиг
+Содержимое конфига для включения мыши и сохранения сессий:
+```
+set -g mouse on
+setw -g xterm-keys on
+tmux-session save
+tmux-session restore
+```
 ***
 ### Docker
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
