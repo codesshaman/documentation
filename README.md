@@ -120,7 +120,7 @@
 
 Дополнительно:
 
-``grep -n 'TEXT' filename.txt | cut -d: -f1`` - вывод строки по тексту
+``grep -n 'TEXT' filename.txt | cut -d: -f1`` - вывод номера строки по тексту
 ***
 ### AboutUsers
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
