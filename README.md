@@ -112,9 +112,10 @@
 ``sed -i '$d' filename.txt`` - удаление последней строки в файле</br>
 ``sed -i '/^$/d' filename.txt`` - удаление всех пустых строк в файле</br>
 ``sed -i '/TOKEN_PURCHASE=/d' filename.txt`` - удаление строки по содержимому</br>
+``sed -i -e '5,10d;13d' filename.txt`` - удаление с 5 по 10 и 13 строк</br>
 ``sed -i '1i # comment\n' filename.txt`` - комментарий с переносом в первую строку файла</br>
 ``sed -i 's/FOO/BAR/g' filename.txt`` - замена ВСЕХ foo на bar в файле</br>
-``sed '0,/FOO/s/FOO/BAR/' filename.txt`` - замена первого foo на bar</br>
+``sed -i '0,/FOO/s/FOO/BAR/' filename.txt`` - замена первого foo на bar</br>
 ``sed -i '3i\Это новая строка' filename.txt`` - вставка строки после третьей</br>
 ***
 ### AboutUsers
