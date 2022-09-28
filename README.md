@@ -5,6 +5,7 @@
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
+  - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
   - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "AboutUsers")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
@@ -102,6 +103,15 @@
 #### lsof
 ``lsof -i``</br>
 ``lsof -i 80``</br>
+***
+### Sed
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Удаление, вставка и замена строк в файлах
+
+``sed '3d' fileName.txt`` - удаление третьей строки в файле</br>
+``sed '$d' filename.txt`` - удаление последней строки в файле</br>
+``sed '$d' filename.txt`` - удаление последней строки в файле</br>
+
 ***
 ### AboutUsers
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
