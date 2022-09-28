@@ -108,7 +108,7 @@
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Удаление, вставка и замена строк в файлах
 
-``sed -i '3d' fileName.txt`` - удаление третьей строки в файле</br>
+``sed -i '3d' filename.txt`` - удаление третьей строки в файле</br>
 ``sed -i '$d' filename.txt`` - удаление последней строки в файле</br>
 ``sed -i '/^$/d' filename.txt`` - удаление всех пустых строк в файле</br>
 ``sed -i '/TOKEN_PURCHASE=/d' filename.txt`` - удаление строки по содержимому</br>
