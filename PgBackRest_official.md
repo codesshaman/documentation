@@ -23,15 +23,14 @@ sudo apt-get install make gcc libpq-dev libssl-dev libxml2-dev pkg-config \
 
 ``sudo scp build:/build/pgbackrest-release-2.41/src/pgbackrest /usr/bin``
 
-``sudo chmod 755 /usr/bin/pgbackrest``
-
 ```
-sudo mkdir -p -m 770 /var/log/pgbackrest
-sudo chown postgres:postgres /var/log/pgbackrest
-sudo mkdir -p /etc/pgbackrest
-sudo mkdir -p /etc/pgbackrest/conf.d
-sudo touch /etc/pgbackrest/pgbackrest.conf
-sudo chmod 640 /etc/pgbackrest/pgbackrest.conf
+sudo chmod 755 /usr/bin/pgbackrest && \
+sudo mkdir -p -m 770 /var/log/pgbackrest && \
+sudo chown postgres:postgres /var/log/pgbackrest && \
+sudo mkdir -p /etc/pgbackrest && \
+sudo mkdir -p /etc/pgbackrest/conf.d && \
+sudo touch /etc/pgbackrest/pgbackrest.conf && \
+sudo chmod 640 /etc/pgbackrest/pgbackrest.conf && \
 sudo chown postgres:postgres /etc/pgbackrest/pgbackrest.conf
 ```
 
