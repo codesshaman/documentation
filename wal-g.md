@@ -52,6 +52,8 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ``sudo pg_ctlcluster 14 demo start`` или ``sudo systemctl start postgresql@14-demo``
 
+Проверка:
+
 ``sudo systemctl status postgresql@14-demo``
 
 ### Создание конфига wal-g:
