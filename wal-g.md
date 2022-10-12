@@ -1,5 +1,17 @@
 ### Шаг 1. Установка
 
+```
+cd ~/downloads
+curl -L "https://github.com/wal-g/wal-g/releases/download/v0.2.15/wal-g.linux-amd64.tar.gz" -o "wal-g.linux-amd64.tar.gz"
+tar -xzf wal-g.linux-amd64.tar.gz
+rm wal-g.linux-amd64.tar.gz
+sudo mv wal-g /usr/local/bin/
+```
+
+Проверка:
+
+``wal-g --version``
+
 ### Шаг 2: Создание тестового кластера БД:
 
 ```
