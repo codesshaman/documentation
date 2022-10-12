@@ -63,3 +63,50 @@ pg1-path=/var/lib/postgresql/14/demo
 
 ``pg_ctlcluster 14 demo status``
 
+### Шаг 4: Настройка архивации:
+
+``su postgres``
+
+``cd ~/14/demo``
+
+```
+echo "archive_command = 'pgbackrest --stanza=demo archive-push %p'" > postgresql.conf && \
+echo "archive_mode = on" >> postgresql.conf && \
+echo "max_wal_senders = 3" >> postgresql.conf && \
+echo "wal_level = replica" >> postgresql.conf
+```
+ 
+``pg_ctlcluster 14 demo restart``
+
+``pg_ctlcluster 14 demo status``
+
+### шаг 5: Настройка конфигурации pgbackrest:
+
+Генерация секретного ключа:
+
+``openssl rand -base64 48``
+
+Получившийся ключ вставляем в строку repo1-cipher-pass
+
+``nano /etc/pgbackrest/pgbackrest.conf``
+
+```
+# Имя кластера и путь к кластеру:
+[demo]
+pg1-path=/var/lib/postgresql/14/demo
+
+[global]
+# Сгенерированный командой openssl rand -base64 48 ключ
+repo1-cipher-pass=zWaf6XtpjIVZC5444yXB+cgFDFl7MxGlgkZSaoPvTGirhPygu4jOKOXf9LO4vjfO
+# Тип шифрования
+repo1-cipher-type=aes-256-cbc
+# Путь к директории с конфигом:
+repo1-path=/var/lib/pgbackrest
+# Хранить не более 3-х полных копий
+repo1-retention-full=3
+
+[global:archive-push]
+# Уровень сжатия
+compress-level=3
+```
+
