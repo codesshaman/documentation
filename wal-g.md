@@ -34,5 +34,7 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 Перезагрузка конфига:
 
-``killall -s HUP postgres``
+``Ctrl + D``
+
+``sudo killall -s HUP postgres``
 
