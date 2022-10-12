@@ -1,4 +1,4 @@
-### Step 1. Build:
+### Шаг 1. Build:
 
 ``cd ~``
 
@@ -17,7 +17,7 @@ sudo apt-get install make gcc libpq-dev libssl-dev libxml2-dev pkg-config \
 
 ``cd /build/pgbackrest-release-2.41/src && ./configure && make``
 
-### Step 2. Installation:
+### Шаг 2. Установка:
 
 ``sudo apt-get install postgresql-client libxml2``
 
@@ -39,7 +39,7 @@ Check:
 
 ``sudo -u postgres pgbackrest``
 
-### Step 3: Create DB cluster:
+### Шаг 3: Создание тестового кластера БД:
 
 ```
 sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
@@ -47,4 +47,19 @@ sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
 ```
 
 ``sudo pg_createcluster 14 demo``
+
+``su postgres``
+
+``/etc/pgbackrest/pgbackrest.conf``
+
+```
+[demo]
+pg1-path=/var/lib/postgresql/14/demo
+```
+
+Проверка:
+
+``pg_ctlcluster 14 demo restart``
+
+``pg_ctlcluster 14 demo status``
 
