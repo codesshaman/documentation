@@ -23,14 +23,16 @@ sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
 
 ``su postgres``
 
-``/etc/pgbackrest/pgbackrest.conf``
+``nano /etc/pgbackrest/pgbackrest.conf``
+
+Код:
 
 ```
 [demo]
 pg1-path=/var/lib/postgresql/14/demo
 ```
 
-### Изменение конфига:
+### Изменение конфига кластера:
 
 ``su postgres``
 
@@ -50,3 +52,28 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ``sudo killall -s HUP postgres``
 
+### Создание конфига wal-g:
+
+``su postgres``
+
+``cd ~``
+
+``nano .walg.json``
+
+Код:
+
+```
+{
+"WALG_S3_PREFIX": "s3://yourbucket/postgresbackups",
+"AWS_ACCESS_KEY_ID": "yourkey",
+"AWS_SECRET_ACCESS_KEY": "yoursecretkey",
+"WALG_COMPRESSION_METHOD": "brotli",
+"WALG_DELTA_MAX_STEPS": "5",
+"PGDATA": "/var/lib/postgresql/14/demo",
+"PGHOST": "/var/run/postgresql/.s.PGSQL.5432"
+}
+```
+
+``chown postgres:postgres /var/lib/postgresql/.walg.json``
+
+```
