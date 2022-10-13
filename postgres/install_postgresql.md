@@ -87,3 +87,20 @@ sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+
+### Шаг 2: Создание тестового кластера БД:
+
+```
+sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
+       -D /var/lib/postgresql/14/demo -k -A peer
+```
+
+``sudo pg_createcluster 14 demo``
+
+``su postgres``
+
+Перезапускаем сервис:
+
+``sudo systemctl restart postgresql``
+
+``sudo systemctl status postgresql``
