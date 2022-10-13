@@ -68,9 +68,11 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ```
 {
-"WALG_S3_PREFIX": "s3://yourbucket/postgresbackups",
+"WALG_S3_PREFIX": "s3://yourbucketname",
 "AWS_ACCESS_KEY_ID": "yourkey",
 "AWS_SECRET_ACCESS_KEY": "yoursecretkey",
+"AWS_ENDPOINT": "http://hb.bizmrg.com",
+"AWS_REGION": "ru-msk",
 "WALG_COMPRESSION_METHOD": "brotli",
 "WALG_DELTA_MAX_STEPS": "5",
 "PGDATA": "/var/lib/postgresql/14/demo",
@@ -78,6 +80,26 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 }
 ```
 
-``chown postgres:postgres /var/lib/postgresql/.walg.json``
+Примеры более развёрнутых настроек:
 
 ```
+{
+"WALG_S3_PREFIX": "s3://yourbucketname",
+"AWS_ACCESS_KEY_ID": "yourkey",
+"AWS_SECRET_ACCESS_KEY": "yoursecretkey",
+"AWS_ENDPOINT": "http://hb.bizmrg.com",
+"AWS_REGION": "ru-msk",
+"WALG_COMPRESSION_METHOD": "brotli",
+"WALG_DELTA_MAX_STEPS": "5",
+"PGDATA": "/var/lib/postgresql/14/demo",
+"PGHOST": "/var/run/postgresql/.s.PGSQL.5432"
+"AWS_S3_FORCE_PATH_STYLE": "true",
+"WALG_UPLOAD_CONCURRENCY": "2",
+"WALG_DOWNLOAD_CONCURRENCY": "2",
+"WALG_UPLOAD_DISK_CONCURRENCY": "2",
+"WALG_DELTA_MAX_STEPS": "7"
+}
+```
+
+``chown postgres:postgres /var/lib/postgresql/.walg.json``
+
