@@ -88,7 +88,7 @@ sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g
 
 ``sudo systemctl status postgresql``
 
-### Шаг 2: Создание тестового кластера БД:
+### Бонус: Создание тестового кластера БД:
 
 ```
 sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
@@ -97,10 +97,10 @@ sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
 
 ``sudo pg_createcluster 14 demo``
 
-``su postgres``
+Перезагрузка кластера:
 
-Перезапускаем сервис:
+``sudo pg_ctlcluster 14 demo start`` или ``sudo systemctl start postgresql@14-demo``
 
-``sudo systemctl restart postgresql``
+Проверка:
 
-``sudo systemctl status postgresql``
+``sudo systemctl status postgresql@14-demo``
