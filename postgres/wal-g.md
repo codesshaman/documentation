@@ -12,27 +12,7 @@ sudo mv wal-g /usr/local/bin/
 
 ``wal-g --version``
 
-### Шаг 2: Создание тестового кластера БД:
-
-```
-sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
-       -D /var/lib/postgresql/14/demo -k -A peer
-```
-
-``sudo pg_createcluster 14 demo``
-
-``su postgres``
-
-``nano /etc/pgbackrest/pgbackrest.conf``
-
-Код:
-
-```
-[demo]
-pg1-path=/var/lib/postgresql/14/demo
-```
-
-### Изменение конфига кластера:
+### Шаг 3: Изменение конфига кластера:
 
 ``su postgres``
 
@@ -56,7 +36,7 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ``sudo systemctl status postgresql@14-demo``
 
-### Создание конфига wal-g:
+### Шаг 4: Создание конфига wal-g:
 
 ``su postgres``
 
@@ -103,3 +83,16 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ``chown postgres:postgres /var/lib/postgresql/.walg.json``
 
+### Шаг 5: Бэкап:
+
+``su postgres``
+
+```
+/usr/local/bin/wal-g backup-push /var/lib/postgresql/14/demo
+```
+
+Ответ:
+
+```
+
+```
