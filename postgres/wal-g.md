@@ -1,12 +1,16 @@
 ### Шаг 1. Установка
 
+``cd ~/downloads``
+
 ```
-cd ~/downloads
 curl -L "https://github.com/wal-g/wal-g/releases/download/v0.2.15/wal-g.linux-amd64.tar.gz" -o "wal-g.linux-amd64.tar.gz"
-tar -xzf wal-g.linux-amd64.tar.gz
-rm wal-g.linux-amd64.tar.gz
-sudo mv wal-g /usr/local/bin/
 ```
+
+``tar -xzf wal-g.linux-amd64.tar.gz``
+
+``rm wal-g.linux-amd64.tar.gz``
+
+``sudo mv wal-g /usr/local/bin/``
 
 Проверка:
 
@@ -25,16 +29,6 @@ sed -i "s|#archive_timeout = 0|archive_timeout = 60\n|g" /etc/postgresql/14/demo
 echo "archive_command='/usr/local/bin/wal-g wal-push \"%p\" >> /var/log/postgresql/archive_command.log 2>&1' " >> /etc/postgresql/14/demo/postgresql.conf && \
 echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/postgresql/restore_command.log 2>&1' " >> /etc/postgresql/14/demo/postgresql.conf
 ```
-
-Перезагрузка кластера:
-
-``Ctrl + D``
-
-``sudo pg_ctlcluster 14 demo start`` или ``sudo systemctl start postgresql@14-demo``
-
-Проверка:
-
-``sudo systemctl status postgresql@14-demo``
 
 ### Шаг 4: Создание конфига wal-g:
 
