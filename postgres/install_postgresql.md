@@ -64,20 +64,18 @@ sudo echo "hostssl all             all             0.0.0.0/0                  md
 ``touch logs_settings.sh``
 
 ```
-{ echo '#!/bin/bash'; \
-      echo 'sed -i "s|#logging_collector = off|logging_collector = on\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_rotation_age = 1d|log_rotation_age = 1d\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_rotation_size = 10MB|log_rotation_size = 10MB\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_truncate_on_rotation = off|log_truncate_on_rotation = on\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'|log_filename = postgres-%a.log\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_truncate_on_rotation = off|log_truncate_on_rotation = on\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_connections = off|log_connections = on|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_statement = |log_statement = |g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_min_messages = warning|log_min_messages = warning\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#client_min_messages = notice|client_min_messages = notice\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_min_error_statement = error|log_min_error_statement = error\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-      echo 'sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g" /etc/postgresql/14/main/postgresql.conf'; \
-    } | tee  ~/logs_settings.sh;
+sed -i "s|#logging_collector = off|logging_collector = on\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_rotation_age = 1d|log_rotation_age = 1d\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_rotation_size = 10MB|log_rotation_size = 10MB\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_truncate_on_rotation = off|log_truncate_on_rotation = on\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'|log_filename = postgres-%a.log\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_truncate_on_rotation = off|log_truncate_on_rotation = on\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_connections = off|log_connections = on|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_statement = |log_statement = |g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_min_messages = warning|log_min_messages = warning\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#client_min_messages = notice|client_min_messages = notice\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_min_error_statement = error|log_min_error_statement = error\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g" /etc/postgresql/14/main/postgresql.conf
 ```
 
 ``chmod +x logs_settings.sh``
