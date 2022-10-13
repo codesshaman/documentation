@@ -88,5 +88,18 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 Ответ:
 
 ```
-
+INFO: 2022/10/13 14:10:30.453187 Delta backup from base_00000001000000000000000B_D_000000010000000000000009 with LSN b000028. 
+INFO: 2022/10/13 14:10:30.471958 Calling pg_start_backup()
+INFO: 2022/10/13 14:10:30.578881 Walking ...
+INFO: 2022/10/13 14:10:30.579263 Starting part 1 ...
+INFO: 2022/10/13 14:10:30.796326 Finished writing part 1.
+INFO: 2022/10/13 14:10:30.938200 Starting part 2 ...
+INFO: 2022/10/13 14:10:30.938288 /global/pg_control
+INFO: 2022/10/13 14:10:30.939531 Finished writing part 2.
+INFO: 2022/10/13 14:10:30.940654 Calling pg_stop_backup()
+INFO: 2022/10/13 14:10:32.019141 Starting part 3 ...
+INFO: 2022/10/13 14:10:32.019321 backup_label
+INFO: 2022/10/13 14:10:32.019344 tablespace_map
+INFO: 2022/10/13 14:10:32.019899 Finished writing part 3.
+INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_00000001000000000000000D_D_00000001000000000000000B
 ```
