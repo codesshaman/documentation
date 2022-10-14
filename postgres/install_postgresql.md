@@ -42,6 +42,8 @@ sudo sed -i "s|#listen_addresses = 'localhost'|listen_addresses = '*'\n|g" /etc/
 
 ``sudo systemctl restart postgresql``
 
+``sudo passwd postgres``
+
 ``su postgres``
 
 ```
