@@ -4,7 +4,7 @@
 
 Регистрируем новый сервер в PGAdmin
 
-![подключение к серверу](media/create_db_pgadmin/pgadmin_create_step_0.png)
+![подключение к серверу](../media/create_db_pgadmin/pgadmin_create_step_0.png)
 
 Вводим название для нашего сервера
 
