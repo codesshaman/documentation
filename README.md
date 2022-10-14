@@ -7,6 +7,7 @@
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
   - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "AboutUsers")
+  - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "AboutProcesses")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
@@ -130,6 +131,15 @@
 ``last`` - когда и насколько пользователь заходил в систему</br>
 ``last <username>``  - информация по конкретному пользователю</br>
 ``lastlog`` - все пользователи с датами последнего входа</br>
+***
+### AboutProcesses
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Просмотр и управление процессами
+
+``ps -A`` - все запущенные в системе процессы</br>
+``ps PID (ps 9254)``  - информация по конкретному PID</br>
+``ps -u user`` - процессы, запущенные пользователем user</br>
+``ps -r`` - показать все запущенные процессы</br>
 ***
 ### Tmux
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
