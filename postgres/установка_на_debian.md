@@ -88,3 +88,11 @@ sudo echo "host    all             all             0.0.0.0/0                  md
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+
+### Полное удаление (при необходимости):
+
+```
+sudo apt purge postgresql-14 postgresql-contrib postgresql-client libxml2
+```
+
+``sudo rm -rf /var/log/postgresql``
