@@ -95,4 +95,6 @@ sudo echo "host    all             all             0.0.0.0/0                  md
 sudo apt purge postgresql-14 postgresql-contrib postgresql-client libxml2
 ```
 
-``sudo rm -rf /var/log/postgresql``
+```
+sudo rm -rf /var/log/postgresql /etc/postgresql /etc/init.d/postgresql /var/lib/postgresql /var/cache/postgresql /run/postgresql /usr/include/postgresql /usr/share/postgresql
+```
