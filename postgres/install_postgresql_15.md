@@ -61,11 +61,7 @@ sudo echo "hostssl all             all             0.0.0.0/0                  md
 
 ### Шаг 4. Настройка логгирования:
 
-Создаём скрипт и меняем им настройки логгирования:
-
-``cd ~``
-
-``touch logs_settings.sh``
+Выполняем команды и меняем настройки логгирования:
 
 ```
 sed -i "s|#logging_collector = off|logging_collector = on\n|g" /etc/postgresql/15/main/postgresql.conf && \
@@ -81,10 +77,6 @@ sed -i "s|#client_min_messages = notice|client_min_messages = notice\n|g" /etc/p
 sed -i "s|#log_min_error_statement = error|log_min_error_statement = error\n|g" /etc/postgresql/15/main/postgresql.conf && \
 sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g" /etc/postgresql/15/main/postgresql.conf
 ```
-
-``chmod +x logs_settings.sh``
-
-``sudo ./logs_settings.sh``
 
 Перезапускаем сервис:
 
