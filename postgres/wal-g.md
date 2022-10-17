@@ -37,6 +37,12 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ``sudo service postgresql status``
 
+ИЛИ перезагрузить сам кластер:
+
+``sudo pg_ctlcluster 14 main restart``
+
+``sudo pg_ctlcluster 14 main status``
+
 ### Шаг 4: Создание конфига wal-g:
 
 ``su postgres``
