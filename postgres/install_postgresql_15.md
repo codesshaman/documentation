@@ -49,8 +49,8 @@ sudo sed -i "s|#listen_addresses = 'localhost'|listen_addresses = '*'\n|g" /etc/
 ``su postgres``
 
 ```
-echo "host    all             all             0.0.0.0/0                  md5" >> /etc/postgresql/15/main/pg_hba.conf && \
-echo "hostssl all             all             0.0.0.0/0                  md5" >> /etc/postgresql/15/main/pg_hba.conf
+sudo echo "host    all             all             0.0.0.0/0                  md5" >> /etc/postgresql/15/main/pg_hba.conf && \
+sudo echo "hostssl all             all             0.0.0.0/0                  md5" >> /etc/postgresql/15/main/pg_hba.conf
 ```
 
 ``Ctrl+D``
