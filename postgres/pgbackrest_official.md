@@ -72,10 +72,12 @@ echo "archive_mode = on" >> /etc/postgresql/14/demo/postgresql.conf && \
 echo "max_wal_senders = 3" >> /etc/postgresql/14/demo/postgresql.conf && \
 echo "wal_level = replica" >> /etc/postgresql/14/demo/postgresql.conf
 ```
- 
-``pg_ctlcluster 14 demo restart``
 
-``pg_ctlcluster 14 demo status``
+``Ctrl + D``
+
+``sudo pg_ctlcluster 14 demo restart``
+
+``sudo pg_ctlcluster 14 demo status``
 
 ### шаг 5: Настройка конфигурации pgbackrest:
 
