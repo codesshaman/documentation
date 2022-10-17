@@ -24,7 +24,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 Установка всех необходимых пакетов:
 
-``sudo apt install -y postgresql-14 postgresql-contrib postgresql-client libxml2``
+``sudo apt install -y postgresql-14 postgresql-contrib postgresql-client postgresql-common postgresql-client-common postgresql-client-14 libxml2``
 
 Проверка версии:
 
@@ -93,7 +93,7 @@ sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g
 ### Шаг 5. Полное удаление:
 
 ```
-sudo apt remove postgresql-14 postgresql-common postgresql-client-common postgresql-client-14 --purge
+sudo apt remove postgresql-14 postgresql-common postgresql-client-common postgresql-contrib postgresql-client postgresql-client-14 --purge
 ```
 
 ``sudo apt autoremove -y``
