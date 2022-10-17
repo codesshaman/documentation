@@ -23,6 +23,7 @@ curl -L "https://github.com/wal-g/wal-g/releases/download/v0.2.15/wal-g.linux-am
 ```
 sed -i "s|#wal_level = replica|wal_level = replica\n|g" /etc/postgresql/14/main/postgresql.conf && \
 sed -i "s|#archive_mode = off|archive_mode = on\n|g" /etc/postgresql/14/main/postgresql.conf && \
+sed -i "s|#max_wal_senders = 10|max_wal_senders = 3\n|g" /etc/postgresql/14/main/postgresql.conf && \
 sed -i "s|archive_command|#archive_command|g" /etc/postgresql/14/main/postgresql.conf && \
 sed -i "s|restore_command|#restore_command|g" /etc/postgresql/14/main/postgresql.conf && \
 sed -i "s|#archive_timeout = 0|archive_timeout = 60\n|g" /etc/postgresql/14/main/postgresql.conf && \
