@@ -24,7 +24,9 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 Установка всех необходимых пакетов:
 
-``sudo apt install -y postgresql-14 postgresql-contrib postgresql-client postgresql-common postgresql-client-common postgresql-client-14 libxml2``
+```
+sudo apt install -y postgresql-14 postgresql-contrib postgresql-client postgresql-common postgresql-client-common postgresql-client-14 libxml2
+```
 
 Проверка версии:
 
