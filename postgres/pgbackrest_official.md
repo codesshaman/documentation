@@ -66,13 +66,11 @@ pg1-path=/var/lib/postgresql/14/demo
 
 ``su postgres``
 
-``cd ~/14/demo``
-
 ```
-echo "archive_command = 'pgbackrest --stanza=demo archive-push %p'" > postgresql.conf && \
-echo "archive_mode = on" >> postgresql.conf && \
-echo "max_wal_senders = 3" >> postgresql.conf && \
-echo "wal_level = replica" >> postgresql.conf
+echo "archive_command = 'pgbackrest --stanza=demo archive-push %p'" > /etc/postgresql/14/demo/postgresql.conf && \
+echo "archive_mode = on" >> /etc/postgresql/14/demo/postgresql.conf && \
+echo "max_wal_senders = 3" >> /etc/postgresql/14/demo/postgresql.conf && \
+echo "wal_level = replica" >> /etc/postgresql/14/demo/postgresql.conf
 ```
  
 ``pg_ctlcluster 14 demo restart``
