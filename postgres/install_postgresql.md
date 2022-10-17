@@ -96,6 +96,8 @@ sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g
 sudo apt remove postgresql-14 postgresql-common postgresql-client-common postgresql-client-14 --purge
 ```
 
+``sudo apt autoremove -y``
+
 ### Бонус: Создание тестового кластера БД:
 
 ```
