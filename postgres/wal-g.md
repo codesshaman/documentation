@@ -30,6 +30,12 @@ echo "archive_command='/usr/local/bin/wal-g wal-push \"%p\" >> /var/log/postgres
 echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/postgresql/restore_command.log 2>&1' " >> /etc/postgresql/14/main/postgresql.conf
 ```
 
+``Ctrl + D``
+
+``sudo service postgresql restart``
+
+``sudo service postgresql status``
+
 ### Шаг 4: Создание конфига wal-g:
 
 ``su postgres``
