@@ -171,6 +171,8 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``touch /var/lib/postgresql/14/main/recovery.signal``
 
+``exit`` или ``Ctrl + D``
+
 ``sudo service postgresql start``
 
 ### Шаг 8: (При необходимости) удаление бэкапов:
