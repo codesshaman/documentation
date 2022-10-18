@@ -12,6 +12,8 @@ curl -L "https://github.com/wal-g/wal-g/releases/download/v0.2.15/wal-g.linux-am
 
 ``sudo mv wal-g /usr/local/bin/``
 
+``sudo chown postgres:postgres /usr/local/bin/wal-g``
+
 Проверка:
 
 ``wal-g --version``
@@ -95,7 +97,7 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 ``su postgres``
 
 ```
-/usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
+wal-g backup-push /var/lib/postgresql/14/main
 ```
 
 Ответ:
@@ -117,8 +119,48 @@ INFO: 2022/10/13 14:10:32.019899 Finished writing part 3.
 INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_00000001000000000000000D_D_00000001000000000000000B
 ```
 
+# Просмотреть список бэкапов:
+
+Список бэкапов:
+
+``wal-g backup-list``
+
+Список бэкапов в таблице:
+
+``wal-g backup-list --pretty``
+
+Список строкой в формате json:
+
+``wal-g backup-list --json``
+
+Список в развёрнутом json:
+
+``wal-g backup-list --pretty --json``
+
+Детальный список:
+
+``wal-g backup-list --detail``
+
+Детальный список в строке json:
+
+``wal-g backup-list --detail --json``
+
+Детальный список в развёрнутом json:
+
+``wal-g backup-list --detail --json --pretty``
+
 ### Шаг 6: Расписание бэкапов:
 
 
 ### Шаг 7: Восстановление:
+
+### Шаг 8: (При необходимости) удаление бэкапов:
+
+``su postgres``
+
+Удалить все имеющиеся бэкапы:
+
+```
+wal-g delete everything --confirm
+```
 
