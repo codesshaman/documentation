@@ -10,6 +10,7 @@
   - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "AboutProcesses")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Настройки cron](https://github.com/codesshaman/documentation/#Cron "Cron")
+  - [Systemd таймер](https://github.com/codesshaman/documentation/#SystemdTimer "Cron")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
@@ -167,6 +168,22 @@ tmux-session restore
 ```
 ***
 ### Cron
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Выполнение заданий по расписанию в cron
+
+``crontab -e`` - открыть cron под конкретным пользователем<br>
+``crontab -l`` - просмотр заданий текущего пользователя<br>
+``sudo crontab -u user`` - просмотр расписания пользователя под root<br>
+Запуск скрипта каждый понедельник в 9:00 и 18:00 часов:<br>
+``0 9,18 * * 1 /home/ivan/script.sh``<br>
+Запуск скрипта каждый день в 0:30 и 12:30:<br>
+``30 */12 * * * script.sh``<br>
+Запуск команды каждый месяц 1 числа в 12:00:<br>
+``0 12 1 * * command``<br>
+Запуск скрипта в полночь с понедельника по пятницу:<br>
+``0 0 * * 1-5 /home/ivan/script.sh``<br>
+***
+### SystemdTimer
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Выполнение заданий по расписанию в cron
 
