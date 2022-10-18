@@ -151,8 +151,14 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ### Шаг 6: Расписание бэкапов:
 
+``su postgres``
+
 
 ### Шаг 7: Восстановление:
+
+``su postgres``
+
+``wal-g backup-fetch /var/lib/postgresql/14/main LATEST``
 
 ### Шаг 8: (При необходимости) удаление бэкапов:
 
@@ -163,4 +169,3 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 ```
 wal-g delete everything --confirm
 ```
-
