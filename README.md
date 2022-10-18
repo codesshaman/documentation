@@ -10,7 +10,7 @@
   - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "AboutProcesses")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Настройки cron](https://github.com/codesshaman/documentation/#Cron "Cron")
-  - [Systemd таймер](https://github.com/codesshaman/documentation/#SystemdTimer "Cron")
+  - [Systemd таймер](https://github.com/codesshaman/documentation/#SystemdTimer "Systemd таймер")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Чистый Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
     * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
@@ -185,7 +185,9 @@ tmux-session restore
 ***
 ### SystemdTimer
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
-> Выполнение заданий по расписанию в cron
+> Выполнение заданий по расписанию при помощи таймера systemd
+
+1. Создаём файл в директории /etc/systemd/system
 
 ``crontab -e`` - открыть cron под конкретным пользователем<br>
 ``crontab -l`` - просмотр заданий текущего пользователя<br>
