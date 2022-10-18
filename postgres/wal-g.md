@@ -153,6 +153,13 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``su postgres``
 
+``crontab -e``
+
+Расписание ежедневных бэкапов в 00:40:
+
+```
+40 00 * * * wal-g backup-push /var/lib/postgresql/14/main
+```
 
 ### Шаг 7: Восстановление:
 
