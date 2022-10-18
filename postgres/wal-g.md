@@ -163,9 +163,15 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ### Шаг 7: Восстановление:
 
+``sudo service postgresql stop``
+
 ``su postgres``
 
 ``wal-g backup-fetch /var/lib/postgresql/14/main LATEST``
+
+``touch /var/lib/postgresql/14/main/recovery.signal``
+
+``sudo service postgresql start``
 
 ### Шаг 8: (При необходимости) удаление бэкапов:
 
