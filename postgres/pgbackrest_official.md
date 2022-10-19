@@ -40,9 +40,11 @@ Check:
 
 ### Шаг 3: Создание тестового кластера БД:
 
+``su postgres``
+
 ```
-sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
-       -D /var/lib/postgresql/14/demo -k -A peer
+/usr/lib/postgresql/14/bin/initdb -D /var/lib/postgresql/14/demo -k -A peer
+/usr/lib/postgresql/14/bin/pg_ctl -D /var/lib/postgresql/14/main -l logfile start
 ```
 
 ``sudo pg_createcluster 14 demo``
