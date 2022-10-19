@@ -88,6 +88,15 @@ sudo echo "host    all             all             0.0.0.0/0                  md
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+### Смена пароля пользователя БД (при необходимости):
+
+``su postgres``
+
+``psql postgres``
+
+```
+ALTER USER 'postgres' WITH PASSWORD 'new_password';
+```
 
 ### Полное удаление (при необходимости):
 
