@@ -6,8 +6,9 @@
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
-  - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "AboutUsers")
-  - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "AboutProcesses")
+  - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "About Users")
+  - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "About Processes")
+  - [Информация о пакетах](https://github.com/codesshaman/documentation/#AboutPackages "About Packages")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
   - [Настройки cron](https://github.com/codesshaman/documentation/#Cron "Cron")
   - [Systemd таймер](https://github.com/codesshaman/documentation/#SystemdTimer "Systemd таймер")
@@ -142,6 +143,16 @@
 ``ps PID (ps 9254)``  - информация по конкретному PID</br>
 ``ps -u user`` - процессы, запущенные пользователем user</br>
 ``ps -r`` - показать все запущенные процессы</br>
+***
+### AboutPackages
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Просмотр и управление процессами
+
+``sudo dpkg-query -l | grep package_name`` - вывести все пакеты с package_name в имени</br>
+``sudo dpkg-query -l | less`` - просмотр пакетов через less</br>
+``sudo dpkg-query -f '${binary:Package}\n' -W`` - список установленных пакетов</br>
+``sudo dpkg-query -f '${binary:Package}\n' -W > pkg.txt `` - список установленных пакетов в файл</br>
+``sudo dpkg-query -f '${binary:Package}\n' -W | wc -l `` - количество установленных пакетов</br>
 ***
 ### Tmux
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
