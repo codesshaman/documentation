@@ -95,7 +95,7 @@ sudo echo "host    all             all             0.0.0.0/0                  md
 ``psql postgres``
 
 ```
-ALTER USER 'postgres' WITH PASSWORD 'new_password';
+ALTER USER "postgres" WITH PASSWORD 'new_password';
 ```
 
 ### Полное удаление (при необходимости):
