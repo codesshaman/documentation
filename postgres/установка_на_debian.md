@@ -79,6 +79,12 @@ echo 'sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 20
 
 ``Ctrl+D``
 
+``sudo systemctl start postgresql@14-main``
+
+``sudo systemctl status postgresql@14-main``
+
+Или перезапускаем всю БД:
+
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
