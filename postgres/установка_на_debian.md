@@ -34,6 +34,10 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 ``sudo systemctl status postgresql``
 
+Проверка кластера:
+
+``pg_lsclusters``
+
 ### Шаг 3. Настройка удалённого доступа:
 
 ```
@@ -53,6 +57,10 @@ sed -i "s|127.0.0.1/32|0.0.0.0/0|g" /etc/postgresql/14/main/pg_hba.conf && sed -
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+
+Проверка соединений:
+
+``ss -nlt | grep 5432``
 
 ### Шаг 4. Настройка логгирования:
 
@@ -88,6 +96,10 @@ echo 'sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 20
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+
+Проверка логов:
+
+``cat /var/log/postgresql/postgresql-14-main.log``
 
 ### Смена пароля пользователя БД (при необходимости):
 
