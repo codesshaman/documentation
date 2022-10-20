@@ -94,6 +94,12 @@ echo "restore_command='/usr/local/bin/wal-g wal-fetch \"%f\" \"%p\" >> /var/log/
 
 ### Шаг 5: Бэкап:
 
+Проверить, что всё готово к бэкапу:
+
+``sudo service postgresql status``
+
+``sudo pg_ctlcluster 14 main status``
+
 ``su postgres``
 
 ```
