@@ -60,10 +60,6 @@ sudo echo "host    all             all             0.0.0.0/0                  md
 
 ``su postgres``
 
-``cd ~``
-
-``touch logs_settings.sh``
-
 ```
 echo 'sed -i "s|#logging_collector = off|logging_collector = on\n|g" /etc/postgresql/14/main/postgresql.conf'; && \
 echo 'sed -i "s|#log_rotation_age = 1d|log_rotation_age = 1d\n|g" /etc/postgresql/14/main/postgresql.conf'; && \
@@ -79,15 +75,14 @@ echo 'sed -i "s|#log_min_error_statement = error|log_min_error_statement = error
 echo 'sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 2000\n|g" /etc/postgresql/14/main/postgresql.conf';
 ```
 
-``chmod +x logs_settings.sh``
-
-``sudo ./logs_settings.sh``
-
 Перезапускаем сервис:
+
+``Ctrl+D``
 
 ``sudo systemctl restart postgresql``
 
 ``sudo systemctl status postgresql``
+
 ### Смена пароля пользователя БД (при необходимости):
 
 ``su postgres``
