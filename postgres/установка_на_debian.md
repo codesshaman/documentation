@@ -34,7 +34,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 ``sudo systemctl status postgresql``
 
-### Шаг 3. Настройка:
+### Шаг 3. Настройка удалённого доступа:
 
 ```
 sudo sed -i "s|#listen_addresses = 'localhost'|listen_addresses = '*'\n|g" /etc/postgresql/14/main/postgresql.conf
@@ -45,7 +45,7 @@ sudo sed -i "s|#listen_addresses = 'localhost'|listen_addresses = '*'\n|g" /etc/
 ``su postgres``
 
 ```
-sudo echo "host    all             all             0.0.0.0/0                  md5" >> /etc/postgresql/14/main/pg_hba.conf
+sed -i "s|127.0.0.1/32|0.0.0.0/0|g" /etc/postgresql/14/main/pg_hba.conf && sed -i "s|scram-sha-256|md5|g" /etc/postgresql/14/main/pg_hba.conf
 ```
 
 ``Ctrl+D``
