@@ -1,4 +1,4 @@
-### Шаг 1. Установка
+### 1. Установка
 
 ``cd ~/downloads``
 
@@ -18,7 +18,7 @@ curl -L "https://github.com/wal-g/wal-g/releases/download/v0.2.15/wal-g.linux-am
 
 ``wal-g --version``
 
-### Шаг 3: Изменение конфига кластера:
+### 2: Изменение конфига кластера:
 
 ```
 su - postgres -c 'sed -i "s|#wal_level = replica|wal_level = replica\n|g" /etc/postgresql/14/main/postgresql.conf' && \
@@ -43,7 +43,7 @@ su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/1
 
 ``sudo pg_ctlcluster 14 main status``
 
-### Шаг 4: Создание конфига wal-g:
+### 3: Создание конфига wal-g:
 
 ``su - postgres -c 'nano /var/lib/postgresql/.walg.json'``
 
@@ -86,7 +86,7 @@ su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/1
 
 ``chown postgres:postgres /var/lib/postgresql/.walg.json``
 
-### Шаг 5: Бэкап:
+### 4: Бэкап:
 
 Проверить, что всё готово к бэкапу:
 
@@ -149,7 +149,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``su - postgres -c '/usr/local/bin/wal-g backup-list --detail --json --pretty'``
 
-### Шаг 6: Расписание бэкапов:
+### 5: Расписание бэкапов:
 
 ``su - postgres -c 'crontab -e'``
 
@@ -159,7 +159,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 40 00 * * * /usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
 ```
 
-### Шаг 7: Восстановление последнего бэкапа:
+### 6: Восстановление последнего бэкапа:
 
 ``sudo service postgresql stop``
 
@@ -171,7 +171,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``sudo service postgresql start``
 
-### Шаг 8: Восстановление по времени:
+### 7: Восстановление по времени:
 
 ### Осторожно! При необходимости - удаление бэкапов из облака:
 
