@@ -159,7 +159,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 40 00 * * * /usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
 ```
 
-### Шаг 7: Восстановление:
+### Шаг 7: Восстановление последнего бэкапа:
 
 ``sudo service postgresql stop``
 
@@ -171,7 +171,9 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``sudo service postgresql start``
 
-### Шаг 8: (При необходимости) удаление бэкапов из облака:
+### Шаг 8: Восстановление по времени:
+
+### Осторожно! При необходимости - удаление бэкапов из облака:
 
 ``su postgres``
 
