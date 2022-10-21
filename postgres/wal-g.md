@@ -25,7 +25,8 @@ su - postgres -c 'sed -i "s|#wal_level = replica|wal_level = replica\n|g" /etc/p
 su - postgres -c 'sed -i "s|#archive_mode = off|archive_mode = on\n|g" /etc/postgresql/14/main/postgresql.conf' && \
 su - postgres -c 'sed -i "s|#max_wal_senders = 10|max_wal_senders = 3\n|g" /etc/postgresql/14/main/postgresql.conf' && \
 su - postgres -c 'sed -i "s|recovery_target_time|#recovery_target_time|g" /etc/postgresql/14/main/postgresql.conf' && \
-su - postgres -c 'sed -i "s|archive_command = ''|#archive_command = '*'|g" /etc/postgresql/14/main/postgresql.conf' && \
+su - postgres -c 'sed -i "s|recovery_target_time = ''|recovery_target_time = 'notused'|g" /etc/postgresql/14/main/postgresql.conf' && \
+su - postgres -c 'sed -i "s|archive_command = ''|#archive_command = ''|g" /etc/postgresql/14/main/postgresql.conf' && \
 su - postgres -c 'sed -i "s|restore_command|#restore_command|g" /etc/postgresql/14/main/postgresql.conf' && \
 su - postgres -c 'sed -i "s|#archive_timeout = 0|archive_timeout = 60\n|g" /etc/postgresql/14/main/postgresql.conf' && \
 su - postgres -c 'echo "archive_command='"'"'/usr/local/bin/wal-g wal-push \"%p\" >> /var/log/postgresql/archive_command.log 2>&1'"'"'" >> /etc/postgresql/14/main/postgresql.conf' && \
