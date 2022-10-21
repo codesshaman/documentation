@@ -33,8 +33,6 @@ su - postgres -c 'echo "restore_command='"'"'/usr/local/bin/wal-g wal-fetch \"%f
 su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/14/main/postgresql.conf'
 ```
 
-``Ctrl + D``
-
 ``sudo service postgresql restart``
 
 ``sudo service postgresql status``
@@ -47,11 +45,7 @@ su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/1
 
 ### Шаг 4: Создание конфига wal-g:
 
-``su postgres``
-
-``cd ~``
-
-``nano .walg.json``
+``su - postgres -c 'nano /var/lib/postgresql/.walg.json'``
 
 Код:
 
@@ -100,10 +94,10 @@ su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/1
 
 ``sudo pg_ctlcluster 14 main status``
 
-``su postgres``
+Создание бэкапа:
 
 ```
-wal-g backup-push /var/lib/postgresql/14/main
+su - postgres -c '/usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main'
 ```
 
 Ответ:
@@ -129,42 +123,40 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 Список бэкапов:
 
-``wal-g backup-list``
+``su - postgres -c '/usr/local/bin/wal-g backup-list'``
 
 Список бэкапов в таблице:
 
-``wal-g backup-list --pretty``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --pretty'``
 
 Список строкой в формате json:
 
-``wal-g backup-list --json``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --json'``
 
 Список в развёрнутом json:
 
-``wal-g backup-list --pretty --json``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --pretty --json'``
 
 Детальный список:
 
-``wal-g backup-list --detail``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --detail'``
 
 Детальный список в строке json:
 
-``wal-g backup-list --detail --json``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --detail --json'``
 
 Детальный список в развёрнутом json:
 
-``wal-g backup-list --detail --json --pretty``
+``su - postgres -c '/usr/local/bin/wal-g backup-list --detail --json --pretty'``
 
 ### Шаг 6: Расписание бэкапов:
 
-``su postgres``
-
-``crontab -e``
+``su - postgres -c 'crontab -e'``
 
 Расписание ежедневных бэкапов в 00:40:
 
 ```
-40 00 * * * wal-g backup-push /var/lib/postgresql/14/main
+40 00 * * * /usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
 ```
 
 ### Шаг 7: Восстановление:
@@ -173,11 +165,9 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``su postgres``
 
-``wal-g backup-fetch /var/lib/postgresql/14/main LATEST``
+``su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
 
-``touch /var/lib/postgresql/14/main/recovery.signal``
-
-``exit`` или ``Ctrl + D``
+``su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'``
 
 ``sudo service postgresql start``
 
@@ -188,5 +178,5 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 Удалить все имеющиеся бэкапы:
 
 ```
-wal-g delete everything --confirm
+su - postgres -c 'wal-g delete everything --confirm'
 ```
