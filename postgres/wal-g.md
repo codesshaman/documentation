@@ -236,12 +236,12 @@ if confirm "Восстановить последнюю резервную ко�
       sudo service postgresql start
       sudo service postgresql status
       sudo pg_ctlcluster 14 main status
-fi
-if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
+else if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
     su - postgres -c 'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'
     read -p "Сколько дней назад был сделан бэкап? " DAYS
     DATE=$(date -d "-$DAYS days" "+%F %H:%M:%S")
-    su - postgres -c "echo \"recovery_target_time = 'DATE'"  >> /etc/postgresql/14/main/postgresql.conf"
+    su - postgres -c "echo \"recovery_target_time = '$DATE'\"  >> /etc/postgresql/14/main/postgresql.conf"
+    fi
 fi
 ```
 
