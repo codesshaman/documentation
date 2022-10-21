@@ -200,6 +200,19 @@ Backup extraction complete.
 
 ### 7: Восстановление по времени:
 
+Шаг 1. Создаём скрипт и даём права на исполнение:
+
+```
+{ echo '#!/bin/bash'; \
+      echo 'su - postgres -c '"'"'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'"'"''; \
+      echo 'skip-name-resolve'; \
+      echo 'bind-address=0.0.0.0'; \
+    } | tee  /var/lib/postgresql/.timerecovery.sh;
+
+```
+
+``sudo chown postgres:postgres /var/lib/postgresql/.timerecovery.sh``
+
 ### Осторожно! При необходимости - удаление бэкапов из облака:
 
 ``su postgres``
