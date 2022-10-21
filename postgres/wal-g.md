@@ -163,7 +163,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``sudo service postgresql stop``
 
-``su postgres``
+``su - postgres -c 'rm -rf /var/lib/postgresql/14/main'``
 
 ``su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
 
