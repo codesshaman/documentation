@@ -229,11 +229,26 @@ confirm() {
 }
 if confirm "Восстановить последнюю резервную копию? (y/n or enter for no)"; then
       sudo service postgresql stop
+      sleep 5
       su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
+      sleep 5
       su - postgres -c 'rm -rf /var/lib/postgresql/14/main'
       su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'
+      echo "Ожидаю восстановления базы"
+      sleep 25
       su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'
       sudo service postgresql start
+      CHECK_RECOVERY_SIGNAL_ITER=0
+        while [ ${CHECK_RECOVERY_SIGNAL_ITER} -le 120 ]
+        do
+            if [ ! -f "/var/lib/postgresql/14/main/recovery.signal" ]
+            then
+                echo "Файл recovery.signal удалён"
+                break
+            fi
+            sleep 5
+            ((CHECK_RECOVERY_SIGNAL_ITER+1))
+        done
       sudo service postgresql status
       sudo pg_ctlcluster 14 main status
 else if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
