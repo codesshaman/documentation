@@ -208,7 +208,11 @@ Backup extraction complete.
 
 ### 7: Восстановление по времени:
 
-Шаг 1. Создаём скрипт и даём права на исполнение:
+Шаг 1. Создаём скрипт для восстановления:
+
+``su - postgres -c 'nano /var/lib/postgresql/.recovery.sh'``
+
+Код:
 
 ```
 #!/bin/bash
@@ -228,10 +232,17 @@ if confirm "Восстановить последнюю резервную ко�
       su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
       su - postgres -c 'rm -rf /var/lib/postgresql/14/main'
       su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'
+      su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'
+      sudo service postgresql start
+      sudo service postgresql status
+      sudo pg_ctlcluster 14 main status
+fi
+if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
+
 fi
 ```
 
-``sudo chown postgres:postgres /var/lib/postgresql/.timerecovery.sh``
+``su - postgres -c 'nano /var/lib/postgresql/.recovery.sh'``
 
 ### Осторожно! При необходимости - удаление бэкапов из облака:
 
