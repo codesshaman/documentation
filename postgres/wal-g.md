@@ -241,7 +241,7 @@ if confirm "Восстановить более раннюю резервную 
     su - postgres -c 'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'
     read -p "Сколько дней назад был сделан бэкап? " DAYS
     DATE=$(date -d "-$DAYS days" "+%F %H:%M:%S")
-    su - postgres -c "echo \"recovery_target_time = $DATE\"  >> /etc/postgresql/14/main/postgresql.conf"
+    su - postgres -c "echo \"recovery_target_time = 'DATE'"  >> /etc/postgresql/14/main/postgresql.conf"
 fi
 ```
 
