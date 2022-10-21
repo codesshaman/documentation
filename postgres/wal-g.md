@@ -239,12 +239,12 @@ if confirm "Восстановить последнюю резервную ко�
 fi
 if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
     read -p "Сколько дней назад был сделан бэкап? " DAYS
-    DATE=$(date -d "-$DAYS days" "+\\%F_%T")
-    
+    DATE=$(date -d "-$DAYS days" "+%F %H:%M:%S")
+    su - postgres -c "echo \"recovery_target_time = $DA\"  >> /etc/postgresql/14/main/postgresql.conf"
 fi
 ```
 
-``su - postgres -c 'nano /var/lib/postgresql/.recovery.sh'``
+``su - postgres -c 'chmod 777 /var/lib/postgresql/.recovery.sh'``
 
 ### Осторожно! При необходимости - удаление бэкапов из облака:
 
