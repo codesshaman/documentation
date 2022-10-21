@@ -164,6 +164,14 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``sudo service postgresql stop``
 
+На всякий случай сохраняем оригинал базы:
+
+```
+su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
+```
+
+Удаляем базу и восстанавливаем бэкап:
+
 ``su - postgres -c 'rm -rf /var/lib/postgresql/14/main'``
 
 ``su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
@@ -203,12 +211,24 @@ Backup extraction complete.
 Шаг 1. Создаём скрипт и даём права на исполнение:
 
 ```
-{ echo '#!/bin/bash'; \
-      echo 'su - postgres -c '"'"'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'"'"''; \
-      echo 'skip-name-resolve'; \
-      echo 'bind-address=0.0.0.0'; \
-    } | tee  /var/lib/postgresql/.timerecovery.sh;
-
+#!/bin/bash
+confirm() {
+    read -r -p "${1:-Are you sure? [y/N]} " response
+    case "$response" in
+        [yY][eE][sS]|[yY]) 
+            true
+            ;;
+        *)
+            false
+            ;;
+    esac
+}
+if confirm "Восстановить последнюю резервную копию? (y/n or enter for no)"; then
+      sudo service postgresql stop
+      su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
+      su - postgres -c 'rm -rf /var/lib/postgresql/14/main'
+      su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'
+fi
 ```
 
 ``sudo chown postgres:postgres /var/lib/postgresql/.timerecovery.sh``
