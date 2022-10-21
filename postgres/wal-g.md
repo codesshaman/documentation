@@ -192,6 +192,12 @@ Backup extraction complete.
 
 ``sudo service postgresql start``
 
+Проверка:
+
+``sudo service postgresql status``
+
+``sudo pg_ctlcluster 14 main status``
+
 ### 7: Восстановление по времени:
 
 ### Осторожно! При необходимости - удаление бэкапов из облака:
