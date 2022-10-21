@@ -167,7 +167,27 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
 
+Ответ:
+
+```
+INFO: 2022/10/21 11:35:06.272285 base_000000050000000000000018_D_000000050000000000000012 fetched. Upgrading from LSN 18000028 to LSN 1c000028 
+INFO: 2022/10/21 11:35:06.272188 Finished decompression of pg_control.tar.br
+INFO: 2022/10/21 11:35:06.377325 Finished extraction of part_003.tar.br
+INFO: 2022/10/21 11:35:06.377464 Finished decompression of part_003.tar.br
+INFO: 2022/10/21 11:35:07.013137 Finished decompression of part_001.tar.br
+INFO: 2022/10/21 11:35:07.013248 Finished extraction of part_001.tar.br
+INFO: 2022/10/21 11:35:07.060320 Finished decompression of pg_control.tar.br
+INFO: 2022/10/21 11:35:07.060349 Finished extraction of pg_control.tar.br
+INFO: 2022/10/21 11:35:07.060401 
+Backup extraction complete.
+
+```
+
+Обязательно! Создание сигнального файла для восстановления:
+
 ``su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'``
+
+Запуск демона:
 
 ``sudo service postgresql start``
 
