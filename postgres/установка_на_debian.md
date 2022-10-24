@@ -114,6 +114,16 @@ host    all             all             your.ip.here.0/24        md5
 host    all             all             second.ip.here.0/24      md5
 ```
 
+Занести в список IP всех серверов и сетей, которым необходим доступ к базе.
+
+После этого перезагрузить БД:
+
+``sudo systemctl restart postgresql``
+
+``sudo systemctl status postgresql``
+
+Протестировать все зависящие от БД хосты и службы.
+
 ### Смена пароля пользователя БД (при необходимости):
 
 ``su postgres``
