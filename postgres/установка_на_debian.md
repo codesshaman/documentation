@@ -111,6 +111,7 @@ su postgres -c 'nano /etc/postgresql/14/main/pg_hba.conf'
 
 ```
 host    all             all             your.ip.here.0/24        md5
+host    all             all             second.ip.here.0/24      md5
 ```
 
 ### Смена пароля пользователя БД (при необходимости):
