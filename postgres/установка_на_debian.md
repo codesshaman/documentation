@@ -109,7 +109,9 @@ su postgres -c 'nano /etc/postgresql/14/main/pg_hba.conf'
 
 Добавить доверенные ip в формате:
 
+```
 host    all             all             your.ip.here.0/24        md5
+```
 
 ### Смена пароля пользователя БД (при необходимости):
 
