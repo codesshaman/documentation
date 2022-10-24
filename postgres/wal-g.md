@@ -174,7 +174,7 @@ su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql
 
 ``su - postgres -c 'rm -rf /var/lib/postgresql/14/main'``
 
-``su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
+``su - postgres -c '/usr/local/bin/wal-g backup-fetch /var/lib/postgresql/14/main LATEST'``
 
 Ответ:
 
@@ -269,5 +269,5 @@ fi
 Удалить все имеющиеся бэкапы:
 
 ```
-su - postgres -c 'wal-g delete everything --confirm'
+su - postgres -c '/usr/local/bin/wal-g delete everything --confirm'
 ```
