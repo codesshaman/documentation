@@ -227,18 +227,20 @@ confirm() {
             ;;
     esac
 }
-if confirm "Восстановить последнюю резервную копию? (y/n or enter for no)"; then
-      sudo service postgresql stop
-      sleep 5
-      su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
-      sleep 5
-      su - postgres -c 'rm -rf /var/lib/postgresql/14/main'
-      su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'
-      echo "Ожидаю восстановления базы"
-      sleep 25
-      su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'
-      sudo service postgresql start
-      CHECK_RECOVERY_SIGNAL_ITER=0
+backup() {
+        sudo service postgresql stop
+        sleep 5
+        sudo service postgresql status
+        su - postgres -c 'rm -rf /var/lib/postgresql/main && cp -rf  /var/lib/postgresql/14/main  /var/lib/postgresql/'
+        sleep 5
+        su - postgres -c 'rm -rf /var/lib/postgresql/14/main'
+        su - postgres -c 'wal-g backup-fetch /var/lib/postgresql/14/main LATEST'
+        echo "Ожидаю восстановления базы"
+        sleep 5
+        echo "Запускаю сервис postgres"
+        su - postgres -c 'touch /var/lib/postgresql/14/main/recovery.signal'
+        sudo service postgresql start
+        CHECK_RECOVERY_SIGNAL_ITER=0
         while [ ${CHECK_RECOVERY_SIGNAL_ITER} -le 120 ]
         do
             if [ ! -f "/var/lib/postgresql/14/main/recovery.signal" ]
@@ -249,18 +251,31 @@ if confirm "Восстановить последнюю резервную ко�
             sleep 5
             ((CHECK_RECOVERY_SIGNAL_ITER+1))
         done
-      sudo service postgresql status
-      sudo pg_ctlcluster 14 main status
+        if [ -f "/var/lib/postgresql/12/main/recovery.signal" ]; then
+                echo "ОШИБКА: не удалось восстановить базу данных!"
+                exit 17
+        fi
+        echo "Проверка статуса postgres"
+        sudo service postgresql status
+        sudo pg_ctlcluster 14 main status
+}
+if confirm "Восстановить последнюю резервную копию? (y/n or enter for no)"; then
+        backup()
+        su - postgres -c 'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'
+fi
 else if confirm "Восстановить более раннюю резервную копию? (y/n or enter for no)"; then
-    su - postgres -c 'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'
-    read -p "Сколько дней назад был сделан бэкап? " DAYS
-    DATE=$(date -d "-$DAYS days" "+%F %H:%M:%S")
-    su - postgres -c "echo \"recovery_target_time = '$DATE'\"  >> /etc/postgresql/14/main/postgresql.conf"
+        su - postgres -c 'sed -i "/recovery_target_time/d" "/etc/postgresql/14/main/postgresql.conf"'
+        read -p "Сколько дней назад был сделан бэкап? " DAYS
+        DATE=$(date -d "-$DAYS days" "+%F %H:%M:%S")
+        su - postgres -c "echo \"recovery_target_time = '$DATE'\"  >> /etc/postgresql/14/main/postgresql.conf"
+        echo "Запускаю процесс восстановления"
     fi
 fi
 ```
 
 ``su - postgres -c 'chmod 777 /var/lib/postgresql/.recovery.sh'``
+
+``sudo bash /var/lib/postgresql/.recovery.sh``
 
 ### Осторожно! При необходимости - удаление бэкапов из облака:
 
