@@ -1,7 +1,7 @@
 # Создание тестового кластера БД
 
 ```
-sudo -u postgres /usr/lib/postgresql/15/bin/initdb \
+sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
        -D /var/lib/postgresql/14/demo -k -A peer
 ```
 
