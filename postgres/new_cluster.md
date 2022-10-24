@@ -10,7 +10,7 @@ sudo -u postgres /usr/lib/postgresql/14/bin/initdb \
 Перезагрузка кластера:
 
 ```
-sudo pg_ctlcluster 14 demo start или sudo systemctl start postgresql@15-demo
+sudo pg_ctlcluster 14 demo start или sudo systemctl start postgresql@14-demo
 ```
 
 Проверка:
