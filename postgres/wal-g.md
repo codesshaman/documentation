@@ -87,7 +87,7 @@ su - postgres -c 'echo "#recovery_target_time = '"'"''"'"'" >> /etc/postgresql/1
 
 ``chown postgres:postgres /var/lib/postgresql/.walg.json``
 
-### 4: Бэкап:
+### 4: Бэкап вручную:
 
 Проверить, что всё готово к бэкапу:
 
@@ -119,6 +119,25 @@ INFO: 2022/10/13 14:10:32.019344 tablespace_map
 INFO: 2022/10/13 14:10:32.019899 Finished writing part 3.
 INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_00000001000000000000000D_D_00000001000000000000000B
 ```
+### 5: Бэкап скриптом:
+
+Создаём скрипт:
+
+su - postgres -c 'nano /var/lib/postgresql/.backup.sh'
+
+Код:
+
+```
+#!/bin/bash
+sudo pg_ctlcluster 14 main start
+su - postgres -c '/usr/local/bin/wal-g backup-list --pretty'
+su - postgres -c '/usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main'
+su - postgres -c '/usr/local/bin/wal-g backup-list --pretty'
+```
+
+``su - postgres -c 'chmod 777 /var/lib/postgresql/.backup.sh'``
+
+``sudo bash /var/lib/postgresql/.backup.sh``
 
 # Просмотреть список бэкапов:
 
@@ -150,7 +169,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 
 ``su - postgres -c '/usr/local/bin/wal-g backup-list --detail --json --pretty'``
 
-### 5: Расписание бэкапов:
+### 6: Расписание бэкапов:
 
 ``su - postgres -c 'crontab -e'``
 
@@ -160,7 +179,7 @@ INFO: 2022/10/13 14:10:32.346216 Wrote backup with name base_0000000100000000000
 40 00 * * * /usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
 ```
 
-### 6: Восстановление последнего бэкапа:
+### 7: Восстановление последнего бэкапа:
 
 ``sudo service postgresql stop``
 
@@ -206,7 +225,7 @@ Backup extraction complete.
 
 ``sudo pg_ctlcluster 14 main status``
 
-### 7: Восстановление по времени:
+### 8: Восстановление по времени:
 
 Шаг 1. Создаём скрипт для восстановления:
 
