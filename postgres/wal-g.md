@@ -179,6 +179,13 @@ su - postgres -c '/usr/local/bin/wal-g backup-list --pretty'
 40 00 * * * /usr/local/bin/wal-g backup-push /var/lib/postgresql/14/main
 ```
 
+Или бэкапы скриптом:
+
+```
+40 00 * * * sudo /bin/bash /var/lib/postgresql/.backup.sh
+```
+
+
 ### 7: Восстановление последнего бэкапа:
 
 ``sudo service postgresql stop``
@@ -208,7 +215,6 @@ INFO: 2022/10/21 11:35:07.060320 Finished decompression of pg_control.tar.br
 INFO: 2022/10/21 11:35:07.060349 Finished extraction of pg_control.tar.br
 INFO: 2022/10/21 11:35:07.060401 
 Backup extraction complete.
-
 ```
 
 Обязательно! Создание сигнального файла для восстановления:
