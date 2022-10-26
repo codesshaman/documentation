@@ -143,3 +143,7 @@ sudo apt purge postgresql-14 postgresql-contrib postgresql-client libxml2
 ```
 sudo rm -rf /var/log/postgresql /etc/postgresql /etc/init.d/postgresql /var/lib/postgresql /var/cache/postgresql /run/postgresql /usr/include/postgresql /usr/share/postgresql
 ```
+
+Так же при необходимости - удаление пароля пользователя postgres:
+
+``passwd -d postgres``
