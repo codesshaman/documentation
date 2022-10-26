@@ -311,3 +311,7 @@ fi
 ```
 su - postgres -c '/usr/local/bin/wal-g delete everything --confirm'
 ```
+
+Так же при необходимости - удаление пароля пользователя postgres:
+
+``passwd -d postgres``
