@@ -103,7 +103,7 @@ echo 'sed -i "s|#log_min_duration_statement = -1|log_min_duration_statement = 20
 
 ### Шаг 5. Настройка безопасности:
 
-su postgres -c 'nano /etc/postgresql/14/main/pg_hba.conf'
+``su postgres -c 'nano /etc/postgresql/14/main/pg_hba.conf'``
 
 Закомментировать все подключения с ``0.0.0.0/0`` и ``::1/128``.
 
