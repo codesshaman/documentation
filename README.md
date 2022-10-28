@@ -343,10 +343,19 @@ Mapping портов осуществляется при создании кон
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Makefile для docker-compose
 ```
+NO_COLOR=\033[0m
+OK_COLOR=\033[32;01m
+ERROR_COLOR=\033[31;01m
+WARN_COLOR=\033[33;01m
 name = docker_configuration
 all:
 	@printf "Запуск конфигурации ${name}...\n"
 	@docker-compose -f ./docker-compose.yml up -d
+help:
+	@echo -e "$(WARN_COLOR)- build version=xx   : Make the Docker image"
+	@echo -e "$(WARN_COLOR)- publish version=xx : Publish the image"
+	@echo -e "$(WARN_COLOR)- run version=xx     : Run a container"
+	@echo -e "$(WARN_COLOR)- debug version=xx   : Launch a shell"
 down:
 	@printf "Остановка конфигурации ${name}...\n"
 	@docker-compose -f ./docker-compose.yml down
