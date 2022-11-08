@@ -17,6 +17,9 @@
     * [Docker compose](https://github.com/codesshaman/documentation/#Docker-compose "Docker-compose")
     * [Makefile для docker-compose](https://github.com/codesshaman/documentation/#ComposeMakefile "ComposeMakefile")
     * [Docker swarm](https://github.com/codesshaman/documentation/#Docker-swarm "Docker-swarm")
+  - [K8S](https://github.com/codesshaman/documentation/#K8s "Kubernetes")
+    * [Информация](https://github.com/codesshaman/documentation/#K8s "Kubernetes Info")
+    * [Запуск](https://github.com/codesshaman/documentation/#K8sLaunch "Kubernetes Launch")
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
   - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
   - [Просмотр логов lnav](https://github.com/codesshaman/documentation/#Lnav "Lnav")
@@ -377,6 +380,20 @@ fclean:
 ### Docker-swarm
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Команды docker в режиме роя
+
+***
+### K8s
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Команды Cubernetes
+
+**kubectl get componentstatuses** - получить статус компонентов K8s<br>
+**kubectl cluster-info** - получить информацию о кластере
+
+***
+### K8sLaunch
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Запуск конфигураций Cubernetes
+
 
 ***
 ### Mkcert
