@@ -387,7 +387,8 @@ fclean:
 > Команды Cubernetes
 
 **kubectl get componentstatuses** - получить статус компонентов K8s<br>
-**kubectl cluster-info** - получить информацию о кластере
+**kubectl cluster-info** - получить информацию о кластере<br>
+**kubectl get nodes** - получить информацию о нодах кластера<br>
 
 ***
 ### K8sLaunch
