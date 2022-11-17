@@ -22,7 +22,7 @@
     * [Запуск](https://github.com/codesshaman/documentation/#K8sLaunch "Kubernetes Launch")
   - [Git](https://github.com/codesshaman/documentation/#Git "Git")
     * [Управление ветками](https://github.com/codesshaman/documentation/#Git-Branches "Git-Branches")
-    * [Продвинутые команды](https://github.com/codesshaman/documentation/#Git-Commands2 "Git-Commands2")
+    * [Продвинутые команды](https://github.com/codesshaman/documentation/#Git-Commands "Git-Commands")
     * [Откатить назад](https://github.com/codesshaman/documentation/#Git-Rollback "Git-Rollback")
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
   - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
