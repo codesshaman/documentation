@@ -405,9 +405,7 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Базовые команды Git
 
-    * [](https://github.com/codesshaman/documentation/# "Git-Branches")
-    * [](https://github.com/codesshaman/documentation/#Git-Commands "Git-Commands")
-    * [Откатить назад](https://github.com/codesshaman/documentation/#Git-Rollback "Git-Rollback")
+[Интерактивное обучение git]([https://hub.docker.com/](https://learngitbranching.js.org/?locale=ru_RU) "git")
 
 **kubectl get componentstatuses** - получить статус компонентов K8s<br>
 **kubectl cluster-info** - получить информацию о кластере<br>
