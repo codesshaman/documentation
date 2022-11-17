@@ -20,6 +20,10 @@
   - [K8S](https://github.com/codesshaman/documentation/#K8s "Kubernetes")
     * [Информация](https://github.com/codesshaman/documentation/#K8s "Kubernetes Info")
     * [Запуск](https://github.com/codesshaman/documentation/#K8sLaunch "Kubernetes Launch")
+  - [Git](https://github.com/codesshaman/documentation/#Git "Git")
+    * [Управление ветками](https://github.com/codesshaman/documentation/#Git-Branches "Git-Branches")
+    * [Продвинутые команды](https://github.com/codesshaman/documentation/#Git-Commands2 "Git-Commands2")
+    * [Откатить назад](https://github.com/codesshaman/documentation/#Git-Rollback "Git-Rollback")
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
   - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
   - [Просмотр логов lnav](https://github.com/codesshaman/documentation/#Lnav "Lnav")
@@ -395,6 +399,40 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Запуск конфигураций Cubernetes
 
+
+***
+### Git
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Базовые команды Git
+
+    * [](https://github.com/codesshaman/documentation/# "Git-Branches")
+    * [](https://github.com/codesshaman/documentation/#Git-Commands "Git-Commands")
+    * [Откатить назад](https://github.com/codesshaman/documentation/#Git-Rollback "Git-Rollback")
+
+**kubectl get componentstatuses** - получить статус компонентов K8s<br>
+**kubectl cluster-info** - получить информацию о кластере<br>
+**kubectl get nodes** - получить информацию о нодах кластера<br>
+
+***
+### Git-Branches
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Управление ветками git
+
+
+***
+### Git-Commands
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Продвинутые команды git
+
+
+***
+### Git-Rollback
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Откат изменений в git
+
+**git reset --hard master**
+**git reset --hard master@{"5 minutes ago"}**
+**git reset --hard master@{14:30}**
 
 ***
 ### Mkcert
