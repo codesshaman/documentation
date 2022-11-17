@@ -430,9 +430,9 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Откат изменений в git
 
-**git reset --hard master**
-**git reset --hard master@{"5 minutes ago"}**
-**git reset --hard master@{14:30}**
+**git reset --hard master**<br>
+**git reset --hard master@{"5 minutes ago"}**<br>
+**git reset --hard master@{14:30}**<br>
 
 ***
 ### Mkcert
