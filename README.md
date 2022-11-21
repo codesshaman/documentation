@@ -73,8 +73,11 @@ alias la='ls -la'
 
 Или
 
+```
 echo "alias ll='ls -l'" >> /etc/profile.d/bash-aliases.sh<br>
 echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
+```
+
 и т.д.
 ***
 ### Find
