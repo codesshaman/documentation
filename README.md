@@ -3,6 +3,7 @@
 ### Оглавление
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
+  - [Алиасы bash](https://github.com/codesshaman/documentation/#Aliases "Aliases")
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
@@ -46,6 +47,35 @@
 ``tail -n 3 имя_файла`` - вывод последних 3 строк с обновлением данных<br>
 ``tail -f -s 5 /var/log/syslog`` - просмотр логов с обновлением каждые 5 секунд<br>
 ``tail -f -s 50 /var/log/syslog | grep err`` - сортировка с выводом только ошибок<br> 
+***
+### Aliases
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Создание алиасов в bash
+
+``sudo nano /etc/profile.d/kubernetes-aliases.sh``
+
+```
+alias k='kubectl'
+```
+
+Или
+
+``echo "alias k='kubectl'" >> /etc/profile.d/kubernetes-aliases.sh``
+
+Аналогично
+
+``sudo nano /etc/profile.d/bash-aliases.sh``
+
+```
+alias ll='ls -l'
+alias la='ls -la'
+```
+
+Или
+
+echo "alias ll='ls -l'" >> /etc/profile.d/bash-aliases.sh<br>
+echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
+и т.д.
 ***
 ### Find
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
