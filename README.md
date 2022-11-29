@@ -427,6 +427,10 @@ fclean:
 **kubectl cluster-info** - получить информацию о кластере<br>
 **kubectl get nodes** - получить информацию о нодах кластера<br>
 
+## Pods
+
+**kubectl get pods** - получить информацию о подах<br>
+
 ***
 ### K8sLaunch
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
