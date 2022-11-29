@@ -68,3 +68,7 @@ spec:                       # спецификация
 Просмотреть текущие репликасеты:
 
 ``kubectl get rs``
+
+Изменить количество реплик в репликасете:
+
+``kubectl scale --replicas=2 replicaset my-replicaset``
