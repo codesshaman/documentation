@@ -14,6 +14,8 @@
 
 ``source <(kubectl completion bash)``
 
+``echo "source <(kubectl completion bash)" >> ~/.bashrc``
+
 Минимальные абстракции
 
 ###Pods (Поды)
