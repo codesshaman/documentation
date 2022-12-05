@@ -23,3 +23,17 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 ```
 
 ``install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl``
+
+### Создание кластера
+
+```
+sudo k3d cluster create test-cluster --servers 3 --agents 3 --port 8080:80@loadbalancer --port 8888:8888@loadbalancer --port 8443:443@loadbalancer
+```
+
+### Создание конфига
+
+``k3d cluster create test --verbose --trace``
+
+### Удаление кластера
+
+``k3d cluster delete test-cluster``
