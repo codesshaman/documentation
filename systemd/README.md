@@ -46,4 +46,3 @@ WantedBy=timers.target
 ``sudo systemctl start token_update.timer``
 
 ``sudo systemctl status token_update.timer``
-
