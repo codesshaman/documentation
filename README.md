@@ -146,8 +146,8 @@ echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
 ``dnf install nmap``</br>
 ``nmap -n -PN -sT -sU -p- ВашIP``</br>
 #### lsof
+``lsof -i :80``</br>
 ``lsof -i``</br>
-``lsof -i 80``</br>
 ***
 ### Sed
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
