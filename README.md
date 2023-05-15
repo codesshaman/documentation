@@ -225,6 +225,10 @@ run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
 ``prefix + Ctrl-s``
 #### Использовать для восстановления сессий:
 ``prefix + Ctrl-r``
+#### Синхронизация вкладок:
+``set synchronize-panes on``
+#### Отключение сихронизации:
+``set synchronize-panes off``
 ***
 ### Cron
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
