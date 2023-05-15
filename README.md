@@ -211,13 +211,20 @@ echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
 ``tmux ls`` - список сессий</br>
 ``tmux kill-session -t test`` - стереть сессию</br>
 ``tmux source-file ~/.tmux.conf`` - подсунуть конфиг</br>
+##### Плагин tmux-resurrect:
+```
+git clone https://github.com/tmux-plugins/tmux-resurrect ~/.tmux/plugins/tmux-resurrect
+```
 ##### Содержимое конфига для включения мыши и сохранения сессий:
 ```
 set -g mouse on
 setw -g xterm-keys on
-tmux-session save
-tmux-session restore
+run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
 ```
+#### Использовать для сохранения сессий:
+``prefix + Ctrl-s``
+#### Использовать для восстановления сессий:
+``prefix + Ctrl-r``
 ***
 ### Cron
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
