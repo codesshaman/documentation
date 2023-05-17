@@ -52,7 +52,6 @@
 ### Aliases
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Создание алиасов в bash
-
 ``sudo nano /etc/profile.d/kubernetes-aliases.sh``
 
 ```
