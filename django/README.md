@@ -50,7 +50,7 @@ mkdir templates
 
 ``django-admin startproject project``
 
- ### Шаг 4. Редактирование settings.py главного проекта
+### Шаг 4. Редактирование settings.py главного проекта
 
 ``cd project``
 
@@ -94,3 +94,16 @@ TEMPLATES = [
 
 Сохраняем файл и выходим.
 
+### Шаг 5. Копируем все статические файлы в нужные папки
+
+``python manage.py collectstatic``
+
+Вывод:
+
+```
+125 static files copied to '/project/static'.
+```
+
+(цифры и пути могут отличаться)
+
+### Шаг 6. К
