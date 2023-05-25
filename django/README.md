@@ -132,7 +132,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.parse.parse223',
-    'apps.parse.parse44'
+    'apps.parse.parse223.apps.Parse223Config',
+    'apps.parse.parse44.apps.Parse44Config'
 ]
 ```
