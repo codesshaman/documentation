@@ -106,4 +106,33 @@ TEMPLATES = [
 
 (цифры и пути могут отличаться)
 
-### Шаг 6. К
+### Шаг 6. Создание приложений внутри папки apps (на примере парсеров)
+
+``cd apps``
+
+``mkdir parse``
+
+``cd parse``
+
+``django-admin startapp parse44``
+
+``django-admin startapp parse223``
+
+### Шаг 7. Регистрация созданных приложений в файле settings.py
+
+``cd ../../``
+
+``nano project/settings.py``
+
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'apps.parse.parse223',
+    'apps.parse.parse44'
+]
+```
