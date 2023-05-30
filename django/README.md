@@ -136,3 +136,20 @@ INSTALLED_APPS = [
     'apps.parse.parse44.apps.Parse44Config'
 ]
 ```
+
+### Шаг 8. Правильные настройки имени класса в apps.py приложения:
+
+Меняем ``name`` с ``parse223`` на ``apps.parse.parse223``
+
+Результат:
+
+```
+from django.apps import AppConfig
+
+
+class Parse223Config(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.parser.parse223'
+```
+
+Запускаем приложение и проверяем!
