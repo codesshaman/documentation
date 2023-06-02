@@ -64,6 +64,14 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ```
 
+Создаём переменную для статических файлов:
+
+```
+STATICFILES_DIRS = [
+    str(BASE_DIR / 'static'),
+]
+```
+
 Создаём блок медиафайлов
 
 ```
