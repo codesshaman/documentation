@@ -11,6 +11,7 @@
   - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "About Processes")
   - [Информация о пакетах](https://github.com/codesshaman/documentation/#AboutPackages "About Packages")
   - [Терминальные сессии tmux](https://github.com/codesshaman/documentation/#Tmux "Tmux")
+  - [Просмотр диска через ncdu](https://github.com/codesshaman/documentation/#Ncdu "Ncdu")
   - [Настройки cron](https://github.com/codesshaman/documentation/#Cron "Cron")
   - [Systemd таймер](https://github.com/codesshaman/documentation/#SystemdTimer "Systemd таймер")
   - [Docker](https://github.com/codesshaman/documentation/#Docker "Docker")
@@ -229,6 +230,23 @@ run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
 ``set synchronize-panes on``
 #### Отключение сихронизации:
 ``set synchronize-panes off``
+***
+### Ncdu
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Удобный просмотр дискового пространства при помощи ncdu
+
+#### Шаг 1. Установить ncdu
+
+``sudo apt install ncdu``
+
+#### Шаг 2. Выйти в корневой раздел
+
+``cd /``
+
+#### Шаг 3. Запустить ncdu
+
+``ncdu``
+
 ***
 ### Cron
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
@@ -535,7 +553,7 @@ fclean:
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Ротация логов linux
 
-### Шаг 1. Проверка директории журнала
+#### Шаг 1. Проверка директории журнала
 
 ```
 $ ls /var/log/journal/
@@ -548,7 +566,7 @@ user-1007@17979bd96a95468b80c320de92dc907b-00000000000cad63-0005f1d547388b19.jou
 user-1007.journal
 ```
 
-### Шаг 2. Создание скрипта для настройки ротации
+#### Шаг 2. Создание скрипта для настройки ротации
 
 ``sudo nano /etc/logrotate.d/journal32``
 
@@ -568,7 +586,7 @@ user-1007.journal
 
 ```
 
-### Шаг 3. Добавление конфига в службу ротации логов
+#### Шаг 3. Добавление конфига в службу ротации логов
 
 ``sudo logrotate /etc/logrotate.d/journal32``
 
