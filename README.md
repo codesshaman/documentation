@@ -28,6 +28,7 @@
   - [Самоподписные сертификаты mkcert](https://github.com/codesshaman/documentation/#Mkcert "Mkcert")
   - [Логирование](https://github.com/codesshaman/documentation/#Logs "Logs")
   - [Просмотр логов lnav](https://github.com/codesshaman/documentation/#Lnav "Lnav")
+  - [Настройка ротации логов](https://github.com/codesshaman/documentation/#LogRotation "LogRotation")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
 
@@ -529,6 +530,48 @@ fclean:
  ***Использование***<br>
 ``sudo lnav`` - просмотр syslog<br>
 ``sudo lnav /var/log/auth.log /var/log/dpkg.log`` - просмотр нескольких конкретных логов<br>
+***
+### LogRotation
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Ротация логов linux
+
+### Шаг 1. Проверка директории журнала
+
+```
+$ ls /var/log/journal/
+325cd295db4d31ee9d022824fd0de6b4
+$ ls /var/log/journal/325cd295db4d31ee9d022824fd0de6b4
+system@c5d2a885102c4549bb231e9a9aca07e4-0000000000159aff-0005fb7614f55884.journal
+system.journal
+<...>
+user-1007@17979bd96a95468b80c320de92dc907b-00000000000cad63-0005f1d547388b19.journal
+user-1007.journal
+```
+
+### Шаг 2. Создание скрипта для настройки ротации
+
+``sudo nano /etc/logrotate.d/journal32``
+
+```
+/var/log/journal/325cd295db4d31ee9d022824fd0de6b4 {
+    rotate 7
+    weekly
+    missingok
+    notifempty
+    compress
+    delaycompress
+    sharedscripts
+    postrotate
+        /bin/systemctl kill --kill-who=main --signal=USR1 systemd-journald.service
+    endscript
+}
+
+```
+
+### Шаг 3. Добавление конфига в службу ротации логов
+
+``sudo logrotate /etc/logrotate.d/journal32``
+
 ***
 Вы можете создавать свои комбинации!
 ### Инструкции
