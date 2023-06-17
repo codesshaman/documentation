@@ -66,6 +66,13 @@ STATICFILES_DIRS = [
 ]
 ```
 
+Сверху, после строки с BASE_DIR, добавляем STATIC_ROOT:
+
+```
+STATIC_ROOT = Path(BASE_DIR).joinpath('static')
+```
+
+
 Создаём блок медиафайлов
 
 ```
