@@ -1,6 +1,4 @@
-
-
-*** Создание виртуальной машины с cloud-init на примере debian 12 ***
+***Создание виртуальной машины с cloud-init на примере debian 12***
 
 1. Находим образ по запросу debian cloud images со страницы http://cloud.debian.org/images/cloud/bookworm/latest/
 
