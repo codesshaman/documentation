@@ -2,9 +2,9 @@
 
 Устанавливаем клиентский пакет OpenVPN. Используем следующие команды:
 
-``sudo apt-get update``
+``sudo apt update``
 
-``sudo apt-get install openvpn``
+``sudo apt install openvpn``
 
 ### 2. Настройка клиента
 
