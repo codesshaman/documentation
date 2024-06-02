@@ -18,4 +18,6 @@
 
 ``sudo systemctl daemon-reload``
 
-``sudo service docker start``
+``sudo service docker restart``
+
+``sudo service docker status``
