@@ -4,7 +4,7 @@
 
 ``sudo apt update``
 
-``sudo apt install openvpn``
+``sudo apt install -y openvpn``
 
 ### 2. Настройка клиента
 
