@@ -1,29 +1,38 @@
 
+### 1. Установка клиентского пакета Shadowsocks.
+
+Устанавливаем клиентский пакет shadowsocks-libev. Используем следующие команды:
+
 
 ``sudo apt install shadowsocks-libev``
 
-``sudo cp ./shadowsocks-client.json /etc/shadowsocks-libev/config.json``
+Открываем конфиг
 
-``sudo nano /etc/systemd/system/ss-local.service``
+``sudo nano /etc/shadowsocks-libev/config.json``
+
+Вносим свои данные и сохраняем
+
+### 2. Настройка запуска
+
+Готовая команда запуска:
+
+``sudo ss-local -v -c /etc/shadowsocks-libev/config.json``
+
+Автоматизируем запуск:
+
+``sudo nano /usr/local/bin/shadowsocks``
+
+Вставляем код:
 
 ```
-[Unit]
-Description=Daemon to start Shadowsocks Client
-Wants=network-online.target
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/ss-local -c /etc/shadowsocks-libev/config.json
-
-[Install]
-WantedBy=multi-user.target
+#!/bin/bash
+sudo ss-local -v -c /etc/shadowsocks-libev/config.json
 ```
+Даём права на исполнение:
 
-```
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable ss-local.service
-$ sudo systemctl restart ss-local.service
+``sudo chmod +x /usr/local/bin/shadowsocks``
 
-$ sudo  systemctl status ss-local.service
-```wh
+### 3. Запуск
+
+``shadowsocks``
+
