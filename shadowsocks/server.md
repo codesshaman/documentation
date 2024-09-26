@@ -14,4 +14,9 @@
 
 ``sudo curl -LO https://github.com/v2fly/v2ray-core/releases/download/v5.18.0/v2ray-linux-64.zip``
 
+Разархивируем:
+
+``sudo unzip v2ray-linux-64.zip``
+
+### 2. Установка пакета shadowsocks от v2ray
 
