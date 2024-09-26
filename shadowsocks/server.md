@@ -58,3 +58,19 @@
 
 ``sudo cp /usr/local/bin/v2ray/systemd/system/v2ray.service /etc/systemd/system``
 
+Меняем путь к v2ray на корректный:
+
+`` sudo sed -i 's!/usr/local/bin/v2ray!/usr/local/bin/v2ray/v2ray!1' /etc/systemd/system/v2ray.service``
+
+Перезапускаем system control manager:
+
+``sudo systemctl daemon-reload``
+
+Проверяем что наш демон зарегистрирован:
+
+``sudo systemctl status v2ray``
+
+Видим что демон мёртв: ``inactive (dead)``
+Перезапускаем демона:
+
+
