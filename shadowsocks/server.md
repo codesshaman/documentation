@@ -26,7 +26,7 @@
 
 Меняем содержимое конфига на следующее:
 
-``sudo nano config.json``
+``sudo nano /usr/local/etc/v2ray/config.json``
 
 ```
 {
