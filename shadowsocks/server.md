@@ -20,3 +20,30 @@
 
 ### 2. Установка пакета shadowsocks от v2ray
 
+
+
+Меняем содержимое конфига на следующее:
+
+```
+{
+  "inbounds": [
+    {
+      "port": 443, 
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "chacha20-ietf-poly1305",
+        "ota": true,
+        "password": "M%@WvP^kPe9Ne~V&m"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",  
+      "settings": {}
+    }
+  ]
+}
+
+```
+используя свои порт и пароль, так же можно менять метод шифрования
