@@ -8,7 +8,7 @@
 
 ``cd /opt && sudo mkdir v2ray && cd v2ray``
 
-Смотрим последнюю версию пакета на https://github.com/v2fly/v2ray-core/releases
+Смотрим последнюю версию пакета c [официального репозитория](https://www.debian.org/](https://github.com/v2fly/v2ray-core/releases "скачать v2ray")
 
 Скачиваем пакет:
 
