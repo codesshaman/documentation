@@ -3,7 +3,6 @@
 
 Устанавливаем клиентский пакет shadowsocks-libev. Используем следующие команды:
 
-
 ``sudo apt install shadowsocks-libev``
 
 Открываем конфиг
@@ -35,4 +34,3 @@ sudo ss-local -v -c /etc/shadowsocks-libev/config.json
 ### 3. Запуск
 
 ``shadowsocks``
-
