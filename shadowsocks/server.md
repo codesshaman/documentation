@@ -6,7 +6,7 @@
 
 Создаём директорию:
 
-``cd /opt && sudo mkdir v2ray && cd v2ray``
+``cd /usr/local/bin/ && sudo mkdir v2ray && cd v2ray``
 
 Смотрим последнюю версию пакета c [официального репозитория](https://github.com/v2fly/v2ray-core/releases "скачать v2ray")
 
