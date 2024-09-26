@@ -73,4 +73,10 @@
 Видим что демон мёртв: ``inactive (dead)``
 Перезапускаем демона:
 
+``sudo systemctl restart v2ray``
 
+Ещё раз проверяем статус:
+
+``sudo systemctl status v2ray``
+
+Видим что демон работает и всё ок
