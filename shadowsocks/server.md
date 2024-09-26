@@ -18,11 +18,15 @@
 
 ``sudo unzip v2ray-linux-64.zip``
 
-### 2. Установка пакета shadowsocks от v2ray
+### 2. Создаём конфигурационный файл
 
+Создаём файл в /usr/local/etc/v2ray:
 
+``cd /usr/local/etc/ && sudo mkdir v2ray && cd v2ray && sudo touch config.json``
 
 Меняем содержимое конфига на следующее:
+
+``nano config.json``
 
 ```
 {
