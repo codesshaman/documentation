@@ -80,3 +80,8 @@
 ``sudo systemctl status v2ray``
 
 Видим что демон работает и всё ок
+
+Теперь добавляем сервер в автозагрузку:
+
+``sudo systemctl enable v2ray``
+
