@@ -26,7 +26,7 @@
 
 Меняем содержимое конфига на следующее:
 
-``nano config.json``
+``sudo nano config.json``
 
 ```
 {
