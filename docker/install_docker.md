@@ -20,3 +20,9 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 docker --version
 ```
+
+For user acces:
+
+``
+sudo usermod -aG docker $USER
+``
