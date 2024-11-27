@@ -39,3 +39,10 @@ Add to repository ssh keys
 git config user.name "Corporate User"
 git config user.email "corporate_email@example.com"
 ```
+
+8. Check settings:
+
+```
+git config user.name
+git config user.email
+```
