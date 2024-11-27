@@ -23,4 +23,10 @@ Host corporate-repo
 
 ``cat ~/.ssh/corporate_repo_key.pub``
 
+Add to repository ssh keys
 
+5. Check connection:
+
+``ssh -T corporate-repo``
+
+6. 
