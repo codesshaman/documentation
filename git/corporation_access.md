@@ -29,4 +29,13 @@ Add to repository ssh keys
 
 ``ssh -T corporate-repo``
 
-6. 
+6. Clone your repo:
+
+``git clone corporate-repo:corporate_repo_group/your_repo.git``
+
+7. Set your name and email:
+
+```
+git config user.name "Corporate User"
+git config user.email "corporate_email@example.com"
+```
