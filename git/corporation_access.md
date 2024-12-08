@@ -45,4 +45,6 @@ git config user.email "corporate_email@example.com"
 ```
 git config user.name
 git config user.email
+
+git config --local --list
 ```
