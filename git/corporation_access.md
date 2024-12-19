@@ -9,7 +9,7 @@
    ssh-add ~/.ssh/corporate_repo_key
 ```
 
-4. SSH-configure setting:
+3. SSH-configure setting:
 
 ``nano ~/.ssh/config``
 
