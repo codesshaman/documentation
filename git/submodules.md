@@ -1,7 +1,7 @@
 Add another repo as submodule to your repo:
 
 ```
-git suиmodule add git clone corporate-repo:corporate_repo_group/your_app_repo.git app
+git submodule add git clone corporate-repo:corporate_repo_group/your_app_repo.git app
 ```
 Change directory:
 
