@@ -1,7 +1,15 @@
 Add another repo as submodule to your repo:
 
+For machine keys:
+
 ```
-git submodule add git clone corporate-repo:corporate_repo_group/your_app_repo.git app
+git submodule add https://gitlab.com/group-name/repository-name.git module_name
+```
+
+Fore some corporate keys (change "corporate-repo" to your key name):
+
+```
+git submodule add corporate-repo:group-name/repository-name.git module_name
 ```
 Change directory:
 
