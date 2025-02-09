@@ -19,6 +19,8 @@ Host corporate-repo
   User git
   IdentityFile ~/.ssh/corporate_repo_key
 ```
+``chmod 600 ~/.ssh/config``
+
 4. Add public key to the corporate repo
 
 ``cat ~/.ssh/corporate_repo_key.pub``
