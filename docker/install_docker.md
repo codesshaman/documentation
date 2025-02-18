@@ -3,7 +3,7 @@
 ```
 sudo apt update
 
-sudo apt install ca-certificates curl
+sudo apt install -y ca-certificates curl
 
 sudo install -m 0755 -d /etc/apt/keyrings
 
@@ -16,7 +16,7 @@ echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docke
 
 sudo apt update
 
-sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 docker --version
 ```
