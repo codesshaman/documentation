@@ -8,15 +8,21 @@
 
 Шаг 3. Установка необходимых утилит:
 
-```sudo apt install curl nano make software-properties-common ca-certificates apt-transport-https -y```
+```
+sudo apt install curl nano make software-properties-common ca-certificates apt-transport-https -y
+```
 
 Шаг 4. Импорт GPG-ключа репозитория docker:
 
-```wget -O- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/docker.gpg > /dev/null```
+```
+wget -O- https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor | sudo tee /etc/apt/keyrings/docker.gpg > /dev/null
+```
 
 Шаг 5. Добавление репозитория docker:
 
-```echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable"| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```
+```
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable"| sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
 
 Шаг 6. Обновление списка репозиториев:
 
@@ -32,7 +38,9 @@
 
 Шаг 9. Загрузка docker-compose:
 
-```sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
 
 Шаг 10. Права на исполнение файла:
 
@@ -44,7 +52,9 @@
 
  Шаг 12. Клонирование репозитория adcm:
 
-```git clone https://gitlab.askona.ru/dp-data-platform/adcmpostgres.git```
+```
+git clone https://gitlab.askona.ru/dp-data-platform/adcmpostgres.git
+```
 
 ``cd adcmpostgres``
 
