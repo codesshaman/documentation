@@ -67,7 +67,7 @@ docker-compose --version
  Шаг 12. Клонирование репозитория adcm:
 
 ```
-git clone https://gitlab.askona.ru/dp-data-platform/adcmpostgres.git
+git clone https://github.com/codesshaman/docker_adcm_postgres.git
 ```
 
 ```
