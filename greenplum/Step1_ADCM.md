@@ -1,10 +1,14 @@
 Шаг 1. Авторизация на сервере:
 
-``ssh user@server_ip``
+```
+ssh user@server_ip
+```
 
 Шаг 2. бновление списка репозиториев:
 
-``sudo apt update``
+```
+sudo apt update
+```
 
 Шаг 3. Установка необходимых утилит:
 
@@ -26,15 +30,21 @@ echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.d
 
 Шаг 6. Обновление списка репозиториев:
 
-``sudo apt update``
+```
+sudo apt update
+```
 
 Шаг 7. Установка docker-ce:
 
-``sudo apt install docker-ce -y``
+```
+sudo apt install docker-ce -y
+```
 
 Шаг 8. Проверка установки:
 
-``docker --version``
+```
+docker --version
+```
 
 Шаг 9. Загрузка docker-compose:
 
@@ -44,11 +54,15 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s http
 
 Шаг 10. Права на исполнение файла:
 
-``sudo chmod +x /usr/local/bin/docker-compose``
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 Шаг 11.Проверка установки:
 
-``docker-compose --version``
+```
+docker-compose --version
+```
 
  Шаг 12. Клонирование репозитория adcm:
 
@@ -56,20 +70,30 @@ sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s http
 git clone https://gitlab.askona.ru/dp-data-platform/adcmpostgres.git
 ```
 
-``cd adcmpostgres``
+```
+cd adcmpostgres
+```
 
 Шаг 13. Генерация .env-файла:
 
-``make env``
+```
+make env
+```
 
 Шаг 14. Запуск сборки образов:
 
-``make build``
+```
+make build
+```
 
 После сборки (когда отработает healthcheck) adcm будет доступен по адресу сервера на порту, указанном в .env-файле. По умолчанию 8000. Если миграции в БД по какой-то причине не прошли, можно вызвать их вручную командой
 
-``make migrate``
+```
+make migrate
+```
 
 Переходим по нужному адресу и наблюдаем запущенный adcm:
 
-``http://127.0.0.1:8000``
+```
+http://127.0.0.1:8000
+```
