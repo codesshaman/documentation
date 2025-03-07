@@ -71,7 +71,7 @@ git clone https://github.com/codesshaman/docker_adcm_postgres.git
 ```
 
 ```
-cd adcmpostgres
+cd docker_adcm_postgres
 ```
 
 Шаг 13. Генерация .env-файла:
