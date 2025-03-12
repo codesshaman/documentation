@@ -49,4 +49,27 @@ sudo rm -rf /lib/systemd/system/adb-*
 sudo ls /lib/systemd/system/ | grep adb
 ```
 
-6. 
+6. Удаляем всё из каталога данных /data1:
+
+```
+sudo rm -rf /data1/*
+sudo ls -la /data1
+```
+
+7. Перезапукаем ноду:
+
+```
+sudo reboot
+```
+
+8. После перезагрузки проверяем что всё удалилось:
+
+```
+systemctl list-units --type=service | grep adcm
+systemctl list-units --type=service | grep adb
+sudo ls /lib/systemd/system/ | grep adcm
+sudo ls /lib/systemd/system/ | grep adb
+sudo ls -la /data1
+```
+
+Повторяем действия на всех хостах кластера.
