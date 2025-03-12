@@ -15,7 +15,7 @@ user@Master:~$ ps -u gpadmin
 
 2. Убиваем процессы пользователя:
 
-``sudo kill -9 <process_id>
+``sudo kill -9 <process_id>``
 
 Ответ:
 
