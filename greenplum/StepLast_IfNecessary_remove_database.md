@@ -84,6 +84,12 @@ systemctl list-units --type=service | grep adcm
 systemctl list-units --type=service | grep adb
 ```
 ```
+systemctl list-timers | grep adcm
+```
+```
+systemctl list-timers | grep adb
+```
+```
 sudo ls /lib/systemd/system/ | grep adcm
 ```
 ```
