@@ -22,12 +22,26 @@ sudo userdel -r gpadmin
 
 ```
 sudo systemctl stop adb-status-checker.timer
+```
+```
 sudo systemctl stop adb-status-checker
+```
+```
 sudo systemctl disable adb-status-checker
+```
+```
 sudo systemctl disable adb-status-checker.timer
+```
+```
 sudo systemctl stop adcm-status-checker.timer
+```
+```
 sudo systemctl stop adcm-status-checker
+```
+```
 sudo systemctl disable adcm-status-checker
+```
+```
 sudo systemctl disable adcm-status-checker.timer
 ```
 
@@ -35,8 +49,14 @@ sudo systemctl disable adcm-status-checker.timer
 
 ```
 sudo rm -rf /lib/systemd/system/adcm-*
+```
+```
 sudo ls /lib/systemd/system/ | grep adcm
+```
+```
 sudo rm -rf /lib/systemd/system/adb-*
+```
+```
 sudo ls /lib/systemd/system/ | grep adb
 ```
 
@@ -44,6 +64,8 @@ sudo ls /lib/systemd/system/ | grep adb
 
 ```
 sudo rm -rf /data1/*
+```
+```
 sudo ls -la /data1
 ```
 
@@ -57,9 +79,17 @@ sudo reboot
 
 ```
 systemctl list-units --type=service | grep adcm
+```
+```
 systemctl list-units --type=service | grep adb
+```
+```
 sudo ls /lib/systemd/system/ | grep adcm
+```
+```
 sudo ls /lib/systemd/system/ | grep adb
+```
+```
 sudo ls -la /data1
 ```
 
