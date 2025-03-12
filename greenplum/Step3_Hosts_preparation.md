@@ -23,7 +23,20 @@ sudo nano /etc/apt/sources.list.d/zabbix.list
 3. Обновляем список репозиториев, устанавливаем необходимые пакеты:
 
 ```
-sudo apt update && sudo apt install curl nano make ncdu htop zip software-properties-common ca-certificates apt-transport-https -y
+sudo apt update && \
+sudo apt install && \
+zip \
+curl \
+nano \
+make \
+ncdu \
+htop \
+ldap-utils \
+ca-certificates \
+postgresql-client \
+apt-transport-https \
+postgresql-client-common \
+software-properties-common  -y
 ```
 
 4. Установим node exporter:
