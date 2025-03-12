@@ -21,10 +21,14 @@ sudo userdel -r gpadmin
 4. Останавливаем сервсиы, связанные с ADB:
 
 ```
+sudo systemctl stop adb-status-checker.timer
 sudo systemctl stop adb-status-checker
 sudo systemctl disable adb-status-checker
+sudo systemctl disable adb-status-checker.timer
+sudo systemctl stop adcm-status-checker.timer
 sudo systemctl stop adcm-status-checker
 sudo systemctl disable adcm-status-checker
+sudo systemctl disable adcm-status-checker.timer
 ```
 
 5. Удаляем сервисы и проверяем удаление
