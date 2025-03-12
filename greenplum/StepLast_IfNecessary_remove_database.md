@@ -2,27 +2,14 @@
 
 1. Узнаём pid процессов, запущенных под пользователем:
 
-``ps -u gpadmin``
-
-Ответ:
-
 ```
-user@Master:~$ ps -u gpadmin
-    PID TTY          TIME CMD
- 184950 ?        08:01:41 postgres
- 184951 ?        00:04:10 postgres
+ps -u gpadmin
 ```
 
-2. Убиваем процессы пользователя:
-
-``sudo kill -9 <process_id>``
-
-Ответ:
+2. Убиваем процессы пользователя, если они есть:
 
 ```
-user@Master:~$ sudo kill -9 184950
-user@Master:~$ ps -u gpadmin
-    PID TTY          TIME CMD
+sudo pkill -9 -u gpadmin
 ```
 
 3. Удаляем пользователя вместе с домашней директорией:
