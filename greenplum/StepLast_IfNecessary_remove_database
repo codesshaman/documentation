@@ -24,3 +24,29 @@ user@Master:~$ sudo kill -9 184950
 user@Master:~$ ps -u gpadmin
     PID TTY          TIME CMD
 ```
+
+3. Удаляем пользователя вместе с домашней директорией:
+
+```
+sudo userdel -r gpadmin
+```
+
+4. Останавливаем сервсиы, связанные с ADB:
+
+```
+sudo systemctl stop adb-status-checker
+sudo systemctl disable adb-status-checker
+sudo systemctl stop adcm-status-checker
+sudo systemctl disable adcm-status-checker
+```
+
+5. Удаляем сервисы и проверяем удаление
+
+```
+sudo rm -rf /lib/systemd/system/adcm-*
+sudo ls /lib/systemd/system/ | grep adcm
+sudo rm -rf /lib/systemd/system/adb-*
+sudo ls /lib/systemd/system/ | grep adb
+```
+
+6. 
