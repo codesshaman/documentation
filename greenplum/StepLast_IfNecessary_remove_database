@@ -1,0 +1,26 @@
+#### Для удаления БД в случае сбоя при установки или невозможности обновления версии
+
+1. Узнаём pid процессов, запущенных под пользователем:
+
+``ps -u gpadmin``
+
+Ответ:
+
+```
+user@Master:~$ ps -u gpadmin
+    PID TTY          TIME CMD
+ 184950 ?        08:01:41 postgres
+ 184951 ?        00:04:10 postgres
+```
+
+2. Убиваем процессы пользователя:
+
+``sudo kill -9 <process_id>
+
+Ответ:
+
+```
+user@Master:~$ sudo kill -9 184950
+user@Master:~$ ps -u gpadmin
+    PID TTY          TIME CMD
+```
