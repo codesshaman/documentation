@@ -24,7 +24,7 @@ sudo nano /etc/apt/sources.list.d/zabbix.list
 
 ```
 sudo apt update && \
-sudo apt install && \
+sudo apt install -y && \
 mc \
 zip \
 curl \
@@ -37,7 +37,7 @@ ca-certificates \
 postgresql-client \
 apt-transport-https \
 postgresql-client-common \
-software-properties-common  -y
+software-properties-common
 ```
 
 4. Установим node exporter:
