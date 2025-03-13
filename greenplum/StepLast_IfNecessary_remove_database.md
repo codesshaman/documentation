@@ -75,7 +75,23 @@ sudo ls -la /data1
 sudo apt remove --purge -y postgresql-client postgresql-client-14 postgresql-client-common postgresql-14
 ```
 
+```
+sudo apt autoremove --purge -y
+```
 
+```
+sudo rm -rf /usr/lib/gpdb
+```
+
+```
+sudo rm -rf /usr/share/doc/gpdb
+```
+
+Проверяем:
+
+```
+dpkg -l | grep postgres
+```
 
 Перезапукаем ноду:
 
