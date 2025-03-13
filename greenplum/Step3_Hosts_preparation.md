@@ -24,7 +24,7 @@ sudo nano /etc/apt/sources.list.d/zabbix.list
 
 ```
 sudo apt update && \
-sudo apt install -y && \
+sudo apt install -y \
 mc \
 zip \
 curl \
