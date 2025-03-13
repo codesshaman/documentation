@@ -93,13 +93,13 @@ sudo rm -rf /usr/share/doc/gpdb
 dpkg -l | grep postgres
 ```
 
-Перезапукаем ноду:
+8. Перезапукаем ноду:
 
 ```
 sudo reboot
 ```
 
-8. После перезагрузки проверяем что всё удалилось:
+9. После перезагрузки проверяем что всё удалилось:
 
 ```
 systemctl list-units --type=service | grep adcm
