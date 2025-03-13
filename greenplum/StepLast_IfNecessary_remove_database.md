@@ -69,7 +69,15 @@ sudo rm -rf /data1/*
 sudo ls -la /data1
 ```
 
-7. Перезапукаем ноду:
+7. Удаляем postgres:
+
+```
+sudo apt remove --purge -y postgresql-client postgresql-client-14 postgresql-client-common postgresql-14
+```
+
+
+
+Перезапукаем ноду:
 
 ```
 sudo reboot
