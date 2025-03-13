@@ -23,7 +23,7 @@ export COORDINATOR_DATA_DIRECTORY=/data1/master/gpseg-1
 3. Выгружаем данные из .bashrc
 
 ```
-Выгружаем данные из .bashrc
+source .bashrc
 ```
 
 4. Проверяем статус кластера:
