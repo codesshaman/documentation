@@ -69,10 +69,18 @@ sudo rm -rf /data1/*
 sudo ls -la /data1
 ```
 
-7. Удаляем postgres:
+7. Удаляем пакеты postgres и arenadata:
 
 ```
 sudo apt remove --purge -y postgresql-client postgresql-client-14 postgresql-client-common postgresql-14
+```
+
+```
+dpkg -l | grep arenadata | awk '{print $2}' | xargs sudo apt remove --purge -y
+```
+
+```
+dpkg -l | grep adb | awk '{print $2}' | xargs sudo apt remove --purge -y
 ```
 
 ```
@@ -91,6 +99,14 @@ sudo rm -rf /usr/share/doc/gpdb
 
 ```
 dpkg -l | grep postgres
+```
+
+```
+dpkg -l | grep arenadata
+```
+
+```
+dpkg -l | grep adb
 ```
 
 8. Перезапукаем ноду:
