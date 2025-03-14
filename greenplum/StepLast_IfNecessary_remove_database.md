@@ -80,6 +80,10 @@ dpkg -l | grep arenadata | awk '{print $2}' | xargs sudo apt remove --purge -y
 ```
 
 ```
+dpkg -l | grep zabbix | awk '{print $2}' | xargs sudo apt remove --purge -y
+```
+
+```
 dpkg -l | grep adb | awk '{print $2}' | xargs sudo apt remove --purge -y
 ```
 
@@ -98,11 +102,15 @@ sudo rm -rf /usr/share/doc/gpdb
 Проверяем:
 
 ```
+dpkg -l | grep arenadata
+```
+
+```
 dpkg -l | grep postgres
 ```
 
 ```
-dpkg -l | grep arenadata
+dpkg -l | grep zabbix
 ```
 
 ```
