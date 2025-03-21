@@ -43,16 +43,11 @@ software-properties-common
 4. Установим node exporter:
 
 ```
-wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_exporter-1.8.2.linux-amd64.tar.gz
-
-tar xvfz node_exporter-*.linux-amd64.tar.gz
- 
-cd node_exporter-*.*-amd64
- 
-sudo cp node_exporter /usr/bin
- 
-sudo useradd -r -M -s /bin/false node_exporter
- 
+wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_exporter-1.8.2.linux-amd64.tar.gz && \
+tar xvfz node_exporter-*.linux-amd64.tar.gz && \
+cd node_exporter-*.*-amd64 && \
+sudo cp node_exporter /usr/bin && \
+sudo useradd -r -M -s /bin/false node_exporter && \
 sudo chown node_exporter:node_exporter /usr/bin/node_exporter
 ```
 
