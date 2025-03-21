@@ -31,6 +31,7 @@ curl \
 nano \
 make \
 ncdu \
+tree \
 htop \
 ldap-utils \
 ca-certificates \
