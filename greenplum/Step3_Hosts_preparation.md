@@ -86,8 +86,8 @@ sudo systemctl status node_exporter
 Импортируем GPG-ключи репозиториев:
 
 ```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D913219AB5333005
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C && \
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D913219AB5333005 && \
 sudo apt update
 ```
 
