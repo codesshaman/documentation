@@ -73,21 +73,11 @@ ExecStart=/usr/bin/node_exporter
 WantedBy=multi-user.target
 ```
 
-Теперь обновляем список сервисов:
+Теперь обновляем список сервисов и включаем демона в автзагрузку:
 
 ```
-sudo systemctl daemon-reload
-```
-
-И включаем демона в автзагрузку:
-
-```
-sudo systemctl enable --now node_exporter
-```
-
-Проверяем статус сервиса:
-
-```
+sudo systemctl daemon-reload && \
+sudo systemctl enable --now node_exporter && \
 sudo systemctl status node_exporter
 ```
 
