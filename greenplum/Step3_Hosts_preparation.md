@@ -295,3 +295,10 @@ sudo passwd root
 ```
 
 Повторить данные действия на всех хостах, где будет установлен ADB: Master, Standby, Segment  - серверах.
+
+12. Останавливаем apparmor на время установки:
+
+```
+sudo systemctl stop apparmor && \
+sudo systemctl status apparmor
+```
