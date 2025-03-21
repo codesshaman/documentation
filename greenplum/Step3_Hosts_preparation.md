@@ -37,7 +37,8 @@ ca-certificates \
 postgresql-client \
 apt-transport-https \
 postgresql-client-common \
-software-properties-common
+software-properties-common && \
+sudo apt upgrade -y
 ```
 
 4. Установим node exporter:
