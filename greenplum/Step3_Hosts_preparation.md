@@ -251,12 +251,19 @@ sudo reboot
 
 Следующая проверка локали должна выдать необходимый нам результат.
 
-9. Удаляем ufw
+9. Удаляем ufw и zabbix:
 
 Файервол может помешать установке, потому удаляем его по крайней мере на время этапа установки:
 
 ```
 sudo apt purge ufw -y
+```
+Zabbix в кластере greenplum устанавливается свой, удаляем существующий:
+
+```
+dpkg -l | grep zabbix | awk '{print $2}' | xargs sudo apt remove --purge -y && \
+sudo systemctl stop zabbix-agent2.service && \
+sudo systemctl disable zabbix-agent2.service
 ```
 
 10. Меняем настройки ssh: 
