@@ -15,6 +15,7 @@ nano ~/.bashrc
 ```
 export PATH=/usr/lib/gpdb/bin/:$PATH
 source /usr/lib/gpdb/greenplum_path.sh
+MASTER_DATA_DIRECTORY=/data1/master/gpseg-1
 export COORDINATOR_DATA_DIRECTORY=/data1/master/gpseg-1
 ```
 
