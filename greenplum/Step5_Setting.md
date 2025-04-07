@@ -56,6 +56,7 @@ sudo nano /data1/master/gpseg-1/pg_hba.conf
 ```
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
+
 Добавляем в интерфейс ``bond0`` строку ``mtu: 9000``:
 
 ```
@@ -90,6 +91,21 @@ network:
     enp75s0f1np1: {}
   version: 2
 ```
+
+9. Перезапускаем интерфейс
+
+```
+sudo netplan apply  
+```
+
+10. Проверка соединений:
+
+```
+ip link show
+```
+
+ mtu 1500 должен поменяться на mtu: 9000
+
 
 8. Перезапуск greenplum под gpadmin:
 
