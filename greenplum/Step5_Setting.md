@@ -104,10 +104,13 @@ sudo netplan apply
 ip link show
 ```
 
- mtu 1500 должен поменяться на mtu: 9000
+mtu 1500 должен поменяться на mtu: 9000
 
+Повторить данные действия на всех хостах кластера!
 
 8. Перезапуск greenplum под gpadmin:
+
+На мастере:
 
 ```
 sudo su gpadmin
