@@ -5,7 +5,7 @@
 Обновим список репозиториев и установим необходимый софт:
 
 ```
-sudo apt update && sudo apt install nano -y
+sudo apt update && sudo apt install nano mc curl wget htop ncdu -y
 ```
 
 Дадим пользователю возможность выполнять sudo без пароля:
