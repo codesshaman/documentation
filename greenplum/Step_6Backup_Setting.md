@@ -5,7 +5,7 @@ mkdir -p /data1/backup
 ```
 
 ```
-chown gpadmin:gpadmin /data1/backu
+chown gpadmin:gpadmin /data1/backup
 ```
 
 ```
