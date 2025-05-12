@@ -118,3 +118,8 @@ gpstop
 gpstart
 gpstate -s
 ```
+Проверка:
+
+```
+psql -p 5432 -d adb -c "SELECT version();"
+```
