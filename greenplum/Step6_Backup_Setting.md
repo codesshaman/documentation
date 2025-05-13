@@ -21,7 +21,7 @@ chmod 755 /data1/backup
 #### 2. Первый (полный) бекап (под gpadmin)
 
 ```
-sudo su gpadmin
+sudo su gpadmin && cd ~
 ```
 
 Сменить ``adb`` на необходимое имя базы данных:
