@@ -1,5 +1,11 @@
 ### Chand Docker images folder
 
+#### Step 0. Stop docker
+
+```
+sudo systemctl stop docker
+```
+
 #### Step 1. Check docker config folder
 
 Check path
@@ -31,3 +37,31 @@ Set your data folder:
 ```
 
 Save and exit
+
+#### Step 3. Check daemon.json file configuration
+
+```
+dockerd --config-file /etc/docker/daemon.json
+```
+
+#### Step 4. Copy old images data to the new folder (if necessary):
+
+```
+sudo rsync -aP /var/lib/docker/ /data/docker/
+```
+
+#### Step 5. Start docker
+
+```
+sudo systemctl start docker
+```
+
+#### Step 6. Check configuration:
+
+```
+docker info | grep "Docker Root Dir"
+```
+
+Expected answer:
+
+Docker Root Dir: /data/docker
