@@ -62,7 +62,7 @@ sudo mkdir -p /home/user/remote_folders
 #### Step 8. Mount remote folder (in the Web Server)
 
 ```
-sudo mount 192.168.1.100:/home/user/remote_data /home/user/remote_folders
+sudo mount 192.168.10.131:/home/user/remote_data /home/user/remote_folders
 ```
 
 #### Step 9. Edit FSTAB (in the Web Server)
