@@ -50,5 +50,5 @@ nano /etc/fstab
 add string:
 
 ```
-sshfs#user@remote_server_ip:/path/to/remote/folder /home/your_user/remote_data fuse defaults,_netdev,IdentityFile=/home/your_user/.ssh/id_rsa,allow_other 0 0
+sshfs#user@remote_server_ip:/home/user/remote_data /home/user/remote_folders fuse defaults,_netdev,IdentityFile=/home/user/.ssh/id_rsa,allow_other 0 0
 ```
