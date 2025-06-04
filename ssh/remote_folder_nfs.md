@@ -41,17 +41,10 @@ Add access for all subnet:
 ```
 sudo exportfs -a
 ```
-
-#### Step 5. Edit fstab for automaticly access (in the Data Server)
-
-```
-nano /etc/fstab
-```
-
-add string:
+#### Step 5. If necessary allow connection in the firewall (in the Data Server)
 
 ```
-sshfs#user@remote_server_ip:/home/user/remote_data /home/user/remote_folders fuse defaults,_netdev,IdentityFile=/home/user/.ssh/id_rsa,allow_other 0 0
+sudo ufw allow from 192.168.10.0/24 to any port nfsAdd commentMore actions
 ```
 
 #### Step 6. Install NFS-client (in the Web Server)
