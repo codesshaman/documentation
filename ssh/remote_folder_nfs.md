@@ -76,7 +76,21 @@ Add the string:
 192.168.10.131:/home/user/remote_data /home/user/remote_folders nfs defaults 0 0
 ```
 
-#### Step 10. Create necessary simlinks (in the Web Server)
+#### Step 10. Check fstab and mount (in the Web Server)
+
+test from systemd:
+
+```
+systemd-analyze verify /etc/fstab
+```
+
+Mount:
+
+```
+sudo mount -a
+```
+
+#### Step 11. Create necessary simlinks (in the Web Server)
 
 ```
 ln -s /home/user/remote_folders/data ~/project/data
