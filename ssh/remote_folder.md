@@ -34,3 +34,21 @@ mkdir /home/user/remote_folders
 ```
 sshfs user@remote_server_ip:/home/user/remote_data /home/user/remote_folders
 ```
+
+#### Step 5. Create necessary symlinks (in the Web Server)
+
+```
+ln -s ~/remote_folders/data ~/my_project/data
+```
+
+#### Step 6. Edit fstab for automaticly access (in the Web Server)
+
+```
+nano /etc/fstab
+```
+
+add string:
+
+```
+sshfs#user@remote_server_ip:/path/to/remote/folder /home/your_user/remote_data fuse defaults,_netdev,IdentityFile=/home/your_user/.ssh/id_rsa,allow_other 0 0
+```
