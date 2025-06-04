@@ -11,13 +11,13 @@ sudo systemctl stop docker
 Check path
 
 ```
-ls -la /etc/docker
+sudo ls -la /etc/docker
 ```
 
 and
 
 ```
-ls -la /etc/docker/daemon.json
+sudo ls -la /etc/docker/daemon.json
 ```
 
 Create folder or file if has no file/folder
@@ -41,7 +41,7 @@ Save and exit
 #### Step 3. Check daemon.json file configuration
 
 ```
-dockerd --config-file /etc/docker/daemon.json
+sudo dockerd --config-file /etc/docker/daemon.json
 ```
 
 #### Step 4. Copy old images data to the new folder (if necessary):
