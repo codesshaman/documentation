@@ -55,7 +55,7 @@ sudo ufw allow from 192.168.10.0/24 to any port nfs
 
 ```
 
-#### Step 5. Edit fstab for automaticly access (in the Web Server)
+#### Step 7. Edit fstab for automaticly access (in the Data Server)
 
 ```
 nano /etc/fstab
@@ -65,4 +65,39 @@ add string:
 
 ```
 sshfs#user@remote_server_ip:/home/user/remote_data /home/user/remote_folders fuse defaults,_netdev,IdentityFile=/home/user/.ssh/id_rsa,allow_other 0 0
+```
+
+#### Step 8. Install NFS-client (in the Web Server)
+
+```
+sudo apt update && sudo apt install nfs-common
+```
+
+#### Step 9. Create mount point (in the Web Server)
+
+```
+sudo mkdir -p /home/user/remote_folders
+```
+
+#### Step 10. Mount remote folder (in the Web Server)
+
+```
+sudo mount 192.168.1.100:/home/user/remote_data /home/user/remote_folders
+```
+
+#### Step 11. Edit FSTAB (in the Web Server)
+
+```
+sudo nano /etc/fstab
+```
+Add the string:
+
+```
+192.168.10.131:/home/user/remote_data /home/user/remote_folders nfs defaults 0 0
+```
+
+#### Step 12. Create necessary simlinks (in the Web Server)
+
+```
+ln -s /home/user/remote_folders/data ~/project/data
 ```
