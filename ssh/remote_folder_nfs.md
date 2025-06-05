@@ -81,7 +81,7 @@ Add the string:
 test from systemd:
 
 ```
-systemd-analyze verify /etc/fstab
+sudo findmnt --verify --verbose
 ```
 
 Mount:
