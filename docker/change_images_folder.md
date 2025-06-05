@@ -14,12 +14,6 @@ Check path
 sudo ls -la /etc/docker
 ```
 
-and
-
-```
-sudo ls -la /etc/docker/daemon.json
-```
-
 Create folder or file if has no file/folder
 
 #### Step 2. Edit daemon.json file
