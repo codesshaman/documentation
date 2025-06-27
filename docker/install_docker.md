@@ -42,3 +42,9 @@ For user acces:
 ``
 sudo usermod -aG docker $USER
 ``
+
+Restart group:
+
+```
+newgrp docker
+```
