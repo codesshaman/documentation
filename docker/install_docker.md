@@ -39,9 +39,9 @@ docker --version
 
 For user acces:
 
-``
+```
 sudo usermod -aG docker $USER
-``
+```
 
 Restart group:
 
