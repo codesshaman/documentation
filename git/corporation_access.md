@@ -25,17 +25,23 @@ Host corporate-repo
   User git
   IdentityFile ~/.ssh/corporate_repo_key
 ```
-``chmod 600 ~/.ssh/config``
+```
+chmod 600 ~/.ssh/config
+```
 
 4. Add public key to the corporate repo
 
-``cat ~/.ssh/corporate_repo_key.pub``
+```
+cat ~/.ssh/corporate_repo_key.pub
+```
 
 Add to repository ssh keys
 
 5. Check connection:
 
-``ssh -T corporate-repo``
+```
+ssh -T corporate-repo
+```
 
 6. Clone your repo:
 
