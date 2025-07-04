@@ -46,3 +46,35 @@ echo "GitLab Runner запущен в фоне (PID: $(cat "$PID_FILE")). Лог
 ```
 chmod +x .start-gitlab-runner.sh
 ```
+
+```
+sudo nano /etc/systemd/system/gitlab-runner-user.service
+```
+
+Content:
+
+```
+[Unit]
+Description=GitLab Runner (User-Mode via Script)
+After=network.target
+
+[Service]
+User=user
+ExecStart=/home/user/start-gitlab-runner.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl daemon-reload
+```
+
+```
+sudo systemctl enable --now gitlab-runner-user
+```
+
+```
+sudo systemctl status gitlab-runner-user
+```
