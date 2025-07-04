@@ -7,45 +7,29 @@ sudo dpkg -i gitlab-runner_14.10.1-1_amd64.deb
 ```
 
 ```
-sudo touch /var/log/gitlab-runner.log
+mkdir ~/.gitlab-runner
 ```
 
 ```
-sudo chown user:user /var/log/gitlab-runner.log
-```
-
-```
-sudo touch /var/run/gitlab-runner.pid
-```
-
-```
-sudo chown user:user /var/run/gitlab-runner.pid
-```
-
-```
-sudo nano ~/.start-gitlab-runner.sh
+nano ~/.gitlab-runner/config.toml
 ```
 
 Content:
 
 ```
-#!/bin/bash
+concurrent = 1
+check_interval = 0
 
-LOG_FILE="/var/log/gitlab-runner.log"
-PID_FILE="/var/run/gitlab-runner.pid"
-
-mkdir -p "$(dirname "$LOG_FILE")" /var/run
-
-nohup gitlab-runner run >> "$LOG_FILE" 2>&1 &
-
-echo $! > "$PID_FILE"
-
-echo "GitLab Runner запущен в фоне (PID: $(cat "$PID_FILE")). Логи: $LOG_FILE"
-```
+[[runners]]
+  name = "Your Gitlab Runner Name"
+  url = "https://gitlab.your_website.ru"
+  token = "your_access_token"
+  executor = "shell"
+  [runners.custom_build_dir]
+  [runners.cache]
 
 ```
-chmod +x .start-gitlab-runner.sh
-```
+
 
 ```
 sudo nano /etc/systemd/system/gitlab-runner-user.service
@@ -55,12 +39,13 @@ Content:
 
 ```
 [Unit]
-Description=GitLab Runner (User-Mode via Script)
+Description=GitLab Runner (User Mode)
 After=network.target
 
 [Service]
 User=user
-ExecStart=/home/user/.start-gitlab-runner.sh
+WorkingDirectory=/home/user
+ExecStart=/usr/bin/gitlab-runner run
 Restart=always
 
 [Install]
