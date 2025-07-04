@@ -60,7 +60,7 @@ After=network.target
 
 [Service]
 User=user
-ExecStart=/home/user/start-gitlab-runner.sh
+ExecStart=/home/user/.start-gitlab-runner.sh
 Restart=always
 
 [Install]
