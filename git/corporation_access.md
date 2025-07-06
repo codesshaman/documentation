@@ -7,10 +7,10 @@ ssh-keygen -t ed25519 -C "your_email@example.com" -f ~/.ssh/corporate_repo_key
 2. Add key to the ssh agent:
 
 ```
-   eval "$(ssh-agent -s)"
+eval "$(ssh-agent -s)"
 ```
 ```
-   ssh-add ~/.ssh/corporate_repo_key
+ssh-add ~/.ssh/corporate_repo_key
 ```
 
 3. SSH-configure setting:
