@@ -1,10 +1,16 @@
 #### Установка gitlab-runner в docker
 
-```docker volume create runner1```
+```
+docker volume create runner1
+```
 
-```sudo mkdir -p /var/log/gitlab-runner```
+```
+sudo mkdir -p /var/log/gitlab-runner
+```
 
-```sudo chown -R 1000:1000 /var/log/gitlab-runner```
+```
+sudo chown -R 1000:1000 /var/log/gitlab-runner
+```
 
 ```
 docker run -d --name gitlab-runner1 --restart unless-stopped \
@@ -15,7 +21,9 @@ docker run -d --name gitlab-runner1 --restart unless-stopped \
 ```
 Проверка:
 
-``docker ps``
+``
+docker ps
+``
 
 #### Регистрация gitlab-runner в gitlab
 
