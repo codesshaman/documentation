@@ -21,9 +21,9 @@ docker run -d --name gitlab-runner1 --restart unless-stopped \
 ```
 Проверка:
 
-``
+```
 docker ps
-``
+```
 
 #### Регистрация gitlab-runner в gitlab
 
