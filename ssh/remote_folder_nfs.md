@@ -39,7 +39,7 @@ Add access for all subnet:
 #### Step 4. Apply export (in the Data Server)
 
 ```
-sudo exportfs -a
+sudo exportfs -ra
 ```
 #### Step 5. If necessary allow connection in the firewall (in the Data Server)
 
