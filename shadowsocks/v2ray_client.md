@@ -47,7 +47,26 @@ sudo nano /etc/v2ray/config.json
                 "udp": true
             }
         }
-    ]
+    ],
+    "log": {
+        "access": "/var/log/v2ray/access.log",
+        "error": "/var/log/v2ray/error.log",
+        "loglevel": "info"
+  }
 }
+```
+
+##### Настройки логов
+
+```
+sudo mkdir /var/log/v2ray/
+```
+
+```
+sudo touch /var/log/v2ray/access.log
+```
+
+```
+sudo touch /var/log/v2ray/error.log
 ```
 
