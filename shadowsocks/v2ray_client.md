@@ -31,7 +31,8 @@ sudo nano /etc/v2ray/config.json
                         "address": "your.server.ip.here",
                         "port": 8443,
                         "method": "chacha20-ietf-poly1305",
-                        "password": "your_password"
+                        "password": "your_password",
+                        "ota": true
                     }
                 ]
             }
