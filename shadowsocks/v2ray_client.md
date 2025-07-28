@@ -71,7 +71,11 @@ sudo touch /var/log/v2ray/error.log
 ```
 
 ```
-sudo chown v2ray:v2ray /var/log/v2ray -R
+sudo chown nobody:nogroup /var/log/v2ray -R
+```
+
+```
+sudo chmod 664 /var/log/v2ray -R
 ```
 
 ##### Запуск
@@ -86,4 +90,44 @@ sudo systemctl start v2ray
 
 ```
 sudo systemctl status v2ray
+```
+
+##### Изменение юнита
+
+Меняем юнит, приводим к следующему виду:
+
+```
+[Unit]
+Description=V2Ray Service
+Documentation=https://www.v2ray.com/ https://www.v2fly.org/
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=simple
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+DynamicUser=false
+NoNewPrivileges=true
+Environment=V2RAY_LOCATION_ASSET=/etc/v2ray
+ExecStart=/usr/bin/v2ray -config /etc/v2ray/config.json
+Restart=on-failure
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
+```
+
+DynamicUser должно быть false,
+User=nobody
+Group=nogroup
+
+##### Перезапуск
+
+```
+sudo systemctl daemon-reload
+```
+
+```
+sudo systemctl restart v2ray
 ```
