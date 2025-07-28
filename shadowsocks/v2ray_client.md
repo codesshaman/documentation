@@ -70,3 +70,20 @@ sudo touch /var/log/v2ray/access.log
 sudo touch /var/log/v2ray/error.log
 ```
 
+```
+sudo chown v2ray:v2ray /var/log/v2ray -R
+```
+
+##### Запуск
+
+```
+sudo systemctl enable v2ray
+```
+
+```
+sudo systemctl start v2ray
+```
+
+```
+sudo systemctl status v2ray
+```
