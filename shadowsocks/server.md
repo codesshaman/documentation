@@ -36,7 +36,7 @@ cd /usr/local/etc/ && sudo mkdir v2ray && cd v2ray && sudo touch config.json
 
 Меняем содержимое конфига на следующее:
 
-``
+```
 sudo nano /usr/local/etc/v2ray/config.json
 ```
 
