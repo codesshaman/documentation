@@ -56,6 +56,12 @@ sudo nano /etc/v2ray/config.json
 }
 ```
 
+Проверка на ошибки:
+
+```
+v2ray test -c /etc/v2ray/config.json
+```
+
 ##### Настройки логов
 
 ```
