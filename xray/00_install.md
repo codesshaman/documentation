@@ -17,3 +17,5 @@ Check:
 ```
 systemctl status x-ui
 ```
+
+Save user data to keepass
