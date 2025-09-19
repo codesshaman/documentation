@@ -1,6 +1,6 @@
 ### Add Jenkins node
 
-#### 1. Create jenkins-master user for contain jenkins ssh-keys:
+#### 1. Create jenkins-master user for contain jenkins ssh-keys (in master):
 
 ```
 sudo useradd -m -d /var/lib/jenkins -s /bin/bash jenkins-master
@@ -10,11 +10,23 @@ sudo useradd -m -d /var/lib/jenkins -s /bin/bash jenkins-master
 sudo chown -R jenkins-master:jenkins-master /var/lib/jenkins
 ```
 
+#### 2. Generate keys and pem (in master):
+
 ```
 ssh-keygen
 ```
 
-#### 2. Add master public key to the node:
+```
+cp id_rsa id_rsa.pem
+```
+
+```
+ssh-keygen -p -m PEM -f id_rsa.pem
+```
+
+#### 3. Add master public key to the node:
+
+##### In master:
 
 ```
 cat ~/.ssh/id_rsa.pub
@@ -22,19 +34,23 @@ cat ~/.ssh/id_rsa.pub
 
 Copy key and paste to the node authorized_keys
 
+##### In agent node:
+
 Open node and switch to jenkins agent user and:
 
 ```
 nano ~/.ssh/authorized_keys
 ```
 
-Past public key and save. Modyfy file:
+Past public key and save. Modyfy file if necessary:
 
 ```
 chmod 600 authorized_keys
 ```
 
-#### 3. Add public key from agent node to the master node:
+#### 4. Add public key from agent node to the master node:
+
+##### In agent node:
 
 Copy agent public key:
 
@@ -42,12 +58,18 @@ Copy agent public key:
 cat ~/.ssh/id_rsa.pub
 ```
 
-Paste in master by jenkins-master user:
+##### In master:
+
+Paste in master:
 
 ```
 nano ~/.ssh/known_hosts
 ```
 
-#### 4. Copy public key to the jenkins web UI:
+#### 5. Copy PEM key to the jenkins web UI (in master):
 
-Open credentials and past public key
+```
+cat id_rsa.pem
+```
+
+Open credentials and past PEM
