@@ -34,6 +34,20 @@ Past public key and save. Modyfy file:
 chmod 600 authorized_keys
 ```
 
-#### 3. Copy public key to the jenkins web UI:
+#### 3. Add public key from agent node to the master node:
+
+Copy agent public key:
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+Paste in master by jenkins-master user:
+
+```
+nano ~/.ssh/known_hosts
+```
+
+#### 4. Copy public key to the jenkins web UI:
 
 Open credentials and past public key
