@@ -99,6 +99,10 @@ scp my_registry.loc.crt user@client:/tmp/
 sudo cp /tmp/my_registry.loc.crt /etc/docker/certs.d/my_registry.loc:5000/ca.crt
 ```
 
+```
+sudo chmod 644 /etc/docker/certs.d/my_registry.loc:5000/ca.crt
+```
+
 ##### Step 6. Restart docker
 
 ```
