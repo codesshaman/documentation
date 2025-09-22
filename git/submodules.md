@@ -46,4 +46,13 @@ Or update only target submodule (as example app):
 
 ``git submodule update --init --recursive app``
 
-Add 
+REMOVING:
+
+```
+git rm --cached path/to/submodule
+```
+And clean submodule data in file:
+
+```
+nano .gitmodules
+```
