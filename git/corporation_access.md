@@ -24,6 +24,8 @@ Host corporate-repo
   HostName git.corporate-repo.com
   User git
   IdentityFile ~/.ssh/corporate_repo_key
+  StrictHostKeyChecking no
+  IdentitiesOnly=yes
 ```
 ```
 chmod 600 ~/.ssh/config
