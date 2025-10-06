@@ -34,7 +34,17 @@ make cert
 
 Or copy your certificate and key to the ``./certs`` folder.
 
-You need write cert and ket name to the ``REGISTRY_CERT`` and ``REGISTRY_KEY`` variables.
+You need write cert and ket name to the ``REGISTRY_CERT`` and ``REGISTRY_KEY`` variables:
+
+```
+nano .env
+```
+
+without ``/cets`` folder path. For example:
+
+``REGISTRY_CERT=my_registry.loc.crt``
+
+``REGISTRY_KEY=my_registry.loc.key``
 
 ##### Step 6. Build configuration:
 
