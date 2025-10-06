@@ -29,7 +29,7 @@ make net
 ##### Step 5. Create or load certificates:
 
 ```
-make certs
+make cert
 ```
 
 Or copy your certificate and key to the ``./certs`` folder.
