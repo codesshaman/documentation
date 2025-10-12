@@ -48,3 +48,9 @@ Restart group:
 ```
 newgrp docker
 ```
+
+Check:
+
+```
+docker ps
+```
