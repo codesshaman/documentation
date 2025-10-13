@@ -6,6 +6,7 @@
     "log-opts": {
         "labels-regex": "^.+"
     },
+    "bip": "10.31.31.1/24",
     "registry-mirrors": [
         "https://mirror.gcr.io",
         "https://daocloud.io",
