@@ -1,4 +1,6 @@
-``sudo nano /etc/docker/daemon.json``
+```
+sudo nano /etc/docker/daemon.json
+```
 
 ```
 {
@@ -22,8 +24,14 @@
 }
 ```
 
-``sudo systemctl daemon-reload``
+```
+sudo systemctl daemon-reload
+```
 
-``sudo service docker restart``
+```
+sudo service docker restart
+```
 
-``sudo service docker status``
+```
+sudo service docker status
+```
