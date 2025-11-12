@@ -1,5 +1,5 @@
 run as root:
 
 ```
-echo "myuser ALL=(ALL) NOPASSWD: ALL" > nano /etc/sudoers.d/myuser
+echo "myuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/myuser
 ```
