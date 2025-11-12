@@ -6,19 +6,19 @@
 
 2. Переходим в терминал OC Proxmox и создаём под root директорию для облачных образов:
 
-   ```
-   mkdir cloudinit_images && cd cloudinit_images
-   ```
+```
+mkdir cloudinit_images && cd cloudinit_images
+```
 
 3. Скачиваем образ диска:
 
-  ```
-  wget http://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2
-  ```
+```
+wget http://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2
+```
 
   Ответ сервера:
 
-  ```
+```
 # wget http://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2
 --2025-11-12 12:11:04--  http://cloud.debian.org/images/cloud/trixie/latest/debian-13-genericcloud-amd64.qcow2
 Resolving cloud.debian.org (cloud.debian.org)... 194.71.11.173, 194.71.11.165, 2001:6b0:19::173, ...
@@ -35,19 +35,19 @@ Saving to: ‘debian-13-genericcloud-amd64.qcow2’
 debian-13-genericcloud-amd64.qcow2          100%[===========================================================================================>] 324.12M  11.7MB/s    in 30s     
 
 2025-11-12 12:11:35 (10.8 MB/s) - ‘debian-13-genericcloud-amd64.qcow2’ saved [339869696/339869696]
-  ```
+```
 
 4. Создаём шаблон с произвольным именем, например ***tmp-debian-13*** и произвольным id, например, ***2013**
 
-   ```
-   qm create 2013 --name tmp-debian-13 --memory 1024 --net0 virtio,bridge=vmbr0
-   ```
+```
+qm create 2013 --name tmp-debian-13 --memory 1024 --net0 virtio,bridge=vmbr0
+```
 
 5. Импортируем наш скачанный образ в шаблон из локального хранилища:
 
-   ```
-   qm importdisk 2013 debian-13-genericcloud-amd64.qcow2 local-lvm
-   ```
+```
+qm importdisk 2013 debian-13-genericcloud-amd64.qcow2 local-lvm
+```
 
 Ответ сервера:
 
@@ -72,20 +72,30 @@ Successfully imported disk as 'unused0:local-lvm:vm-2013-disk-0'
 
 6. Сохраняем имя диска, которое высветилось в последней строке импорта
 
-   В моём случае из ``unused0:local-lvm:vm-2013-disk-0`` нужно сохранить только ``local-lvm:vm-2013-disk-0``
+В моём случае из ``unused0:local-lvm:vm-2013-disk-0`` нужно сохранить только ``local-lvm:vm-2013-disk-0``
 
 7. Привязываем диск с образом к виртуальной машине, используя имя диска:
 
-   ```
-   qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0
-   ```
+```
+qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0
+```
 
 Ответ сервера:
 
 ```
 # qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0
 update VM 2013: -scsi0 local-lvm:vm-2013-disk-0 -scsihw virtio-scsi-pci
-root@proxmox2:~/cloudinit_images# qm set 2013 --ide2 local-lvm:cloudinit
+```
+
+8. Монтируем привод с cloudinit:
+
+```
+qm set 2013 --ide2 local-lvm:cloudinit
+```
+
+   Ответ сервера:
+```
+# qm set 2013 --ide2 local-lvm:cloudinit
 update VM 2013: -ide2 local-lvm:cloudinit
   WARNING: You have not turned on protection against thin pools running out of space.
   WARNING: Set activation/thin_pool_autoextend_threshold below 100 to trigger automatic extension of thin pools before they get full.
@@ -94,41 +104,74 @@ update VM 2013: -ide2 local-lvm:cloudinit
 ide2: successfully created disk 'local-lvm:vm-2013-cloudinit,media=cdrom'
 ```
 
-8. Монтируем привод с cloudinit:
-
-   ```
-   qm set 2013 --ide2 local-lvm:cloudinit
-   ```
-
 9. Создаём загрузочный диск для виртуальной машины:
 
-   ```
-   qm set 2013 --boot c --bootdisk scsi0
-   ```
+```
+qm set 2013 --boot c --bootdisk scsi0
+```
+
+Ответ сервера:
+
+```
+# qm set 2013 --boot c --bootdisk scsi0
+update VM 2013: -boot c -bootdisk scsi0
+```
 
 10. Добавляем консоль TTY в виртуальную машину:
 
-   ```
-   qm set 2013 --serial0 socket --vga serial0
-   ```
+```
+qm set 2013 --serial0 socket --vga serial0
+```
+
+Ответ сервера:
+
+```
+# qm set 2013 --serial0 socket --vga serial0
+update VM 2013: -serial0 socket -vga serial0
+```
 
 11. Добавляем сеть с ip-стеком в качестве dhcp:
 
-   ```
-   qm set 2013 --ipconfig0 ip=dhcp
-   ```
+```
+qm set 2013 --ipconfig0 ip=dhcp
+```
+
+Ответ сервера:
+
+```
+# qm set 2013 --ipconfig0 ip=dhcp
+update VM 2013: -ipconfig0 ip=dhcp
+```
 
 12. При необходимости меняем размер диска на нужный нам:
 
-   ```
-   qm resize 2013 scsi0 8G
-   ```
+```
+qm resize 2013 scsi0 8G
+```
+
+Ответ сервера:
+
+```
+# qm resize 2013 scsi0 8G
+  Size of logical volume pve/vm-2013-disk-0 changed from 3.00 GiB (768 extents) to 8.00 GiB (2048 extents).
+  WARNING: You have not turned on protection against thin pools running out of space.
+  WARNING: Set activation/thin_pool_autoextend_threshold below 100 to trigger automatic extension of thin pools before they get full.
+  Logical volume pve/vm-2013-disk-0 successfully resized.
+```
 
 13. Преобразуем готовую виртуальную машину в шаблон:
 
-   ```
-   qm template 2013
-   ```
+```
+qm template 2013
+```
 
-Дале
-е шаблон можно клонировать и настраивать его параметры во вкладке cloud-init
+Ответ сервера:
+
+```
+# qm template 2013
+  Renamed "vm-2013-disk-0" to "base-2013-disk-0" in volume group "pve"
+  Logical volume pve/base-2013-disk-0 changed.
+  WARNING: Combining activation change with other commands is not advised.
+```
+
+Далее шаблон можно клонировать и настраивать его параметры во вкладке cloud-init
