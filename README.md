@@ -4,7 +4,7 @@
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Создание алиасов в bash](https://github.com/codesshaman/documentation/#Aliases "Aliases")
-  - [Смена имени хоста](https://github.com/codesshaman/documentation/#Aliases "Aliases")
+  - [Смена имени хоста](https://github.com/codesshaman/documentation/#Hostname "Hostname")
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
@@ -83,6 +83,33 @@ echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
 
 и т.д.
 ***
+### Hostname
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+
+Сменить имя хоста командой:
+
+```
+sudo hostnamectl old-hostname new-hostname
+```
+
+Убедиться, что оно сменилось:
+
+```
+sudo nano /etc/hostname
+```
+
+Добавить хост в
+
+```
+sudo nano /etc/hosts
+```
+
+Прописав там
+
+```
+127.0.1.1 new-hostname
+```
+
 ### Find
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Поиск файлов в системе
