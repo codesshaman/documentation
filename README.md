@@ -4,6 +4,7 @@
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Создание алиасов в bash](https://github.com/codesshaman/documentation/#Aliases "Aliases")
+  - [Смена имени хоста](https://github.com/codesshaman/documentation/#Aliases "Aliases")
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
