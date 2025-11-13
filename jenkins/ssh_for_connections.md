@@ -7,7 +7,7 @@ sudo mkdir -p /var/lib/jenkins/.ssh && sudo chmod 700 /var/lib/jenkins/.ssh && s
 Step 1. Set username of remote connection:
 
 ```
-sudo -u jenkins export SSH_USERNAME="user"
+sudo su jenkins && export SSH_USERNAME="user"
 ```
 
 where ``user`` is valid remote server username
