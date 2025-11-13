@@ -92,33 +92,7 @@ update VM 2013: -ide2 local-lvm:cloudinit
 ide2: successfully created disk 'local-lvm:vm-2013-cloudinit,media=cdrom'
 ```
 
-8. Создаём загрузочный диск для виртуальной машины:
-
-```
-qm set 2013 --boot c --bootdisk scsi0
-```
-
-Ответ сервера:
-
-```
-# qm set 2013 --boot c --bootdisk scsi0
-update VM 2013: -boot c -bootdisk scsi0
-```
-
-9. Добавляем консоль TTY в виртуальную машину:
-
-```
-qm set 2013 --serial0 socket --vga serial0
-```
-
-Ответ сервера:
-
-```
-# qm set 2013 --serial0 socket --vga serial0
-update VM 2013: -serial0 socket -vga serial0
-```
-
-10. Добавляем сеть с ip-стеком в качестве dhcp:
+8. Добавляем сеть с ip-стеком в качестве dhcp:
 
 ```
 qm set 2013 --ipconfig0 ip=dhcp
@@ -131,7 +105,7 @@ qm set 2013 --ipconfig0 ip=dhcp
 update VM 2013: -ipconfig0 ip=dhcp
 ```
 
-11. При необходимости меняем размер диска на нужный нам:
+9. При необходимости меняем размер диска на нужный нам:
 
 ```
 qm resize 2013 scsi0 8G
@@ -147,7 +121,7 @@ qm resize 2013 scsi0 8G
   Logical volume pve/vm-2013-disk-0 successfully resized.
 ```
 
-12. Преобразуем готовую виртуальную машину в шаблон:
+10. Преобразуем готовую виртуальную машину в шаблон:
 
 ```
 qm template 2013
