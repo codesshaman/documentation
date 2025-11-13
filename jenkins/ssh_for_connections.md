@@ -25,3 +25,21 @@ ssh-copy-id -i /var/lib/jenkins/.ssh/id_user_servername.pub -p 22 user@192.168.1
 ```
 
 Where ``192.168.1.101`` - realy server ip with open 22 ssh port.
+
+Step 4. Get ssh keys with sshscan:
+
+```
+ssh-keyscan 192.168.1.101 >> ~/.ssh/known_hosts
+```
+
+```
+chmod 644 ~/.ssh/known_hosts
+```
+
+Step 5. Add private key to jenkins credentials:
+
+```
+cat /var/lib/jenkins/.ssh/id_user_servername
+```
+
+And paste to manage/credentials/store/system/domain/
