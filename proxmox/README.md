@@ -77,7 +77,7 @@ Successfully imported disk as 'unused0:local-lvm:vm-2013-disk-0'
 7. Привязываем диск с образом к виртуальной машине, используя имя диска:
 
 ```
-qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0
+qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0 --ide2 local-lvm:cloudinit --boot c --bootdisk scsi0 --serial0 socket --vga serial0 --agent 1
 ```
 
 Ответ сервера:
