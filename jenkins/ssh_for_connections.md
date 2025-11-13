@@ -21,7 +21,7 @@ ssh-keygen -t ed25519 -f /var/lib/jenkins/.ssh/id_user_servername -C "jenkins->u
 Step 3. Copy key to the remote server:
 
 ```
-ssh-copy-id -i /var/lib/jenkins/.ssh/id_user_servername.pub user@192.168.1.101 -p 22
+ssh-copy-id -i /var/lib/jenkins/.ssh/id_user_servername.pub -p 22 user@192.168.1.101
 ```
 
 Where ``192.168.1.101`` - realy server ip with open 22 ssh port.
