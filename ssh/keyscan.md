@@ -1,7 +1,7 @@
 For scan all keys from different server:
 
 ```
-ssh-keyscan 192.168.1.101 >> ~/.ssh/known_hosts
+ssh-keyscan <SERVER_IP> >> ~/.ssh/known_hosts
 ```
 
 If ``known_hosts`` was absent:
