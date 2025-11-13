@@ -80,20 +80,8 @@ Successfully imported disk as 'unused0:local-lvm:vm-2013-disk-0'
 qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0 --ide2 local-lvm:cloudinit --boot c --bootdisk scsi0 --serial0 socket --vga serial0 --agent 1
 ```
 
-Ответ сервера:
-
-```
-# qm set 2013 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-2013-disk-0
-update VM 2013: -scsi0 local-lvm:vm-2013-disk-0 -scsihw virtio-scsi-pci
-```
-
-8. Монтируем привод с cloudinit:
-
-```
-qm set 2013 --ide2 local-lvm:cloudinit
-```
-
    Ответ сервера:
+
 ```
 # qm set 2013 --ide2 local-lvm:cloudinit
 update VM 2013: -ide2 local-lvm:cloudinit
@@ -104,7 +92,7 @@ update VM 2013: -ide2 local-lvm:cloudinit
 ide2: successfully created disk 'local-lvm:vm-2013-cloudinit,media=cdrom'
 ```
 
-9. Создаём загрузочный диск для виртуальной машины:
+8. Создаём загрузочный диск для виртуальной машины:
 
 ```
 qm set 2013 --boot c --bootdisk scsi0
@@ -117,7 +105,7 @@ qm set 2013 --boot c --bootdisk scsi0
 update VM 2013: -boot c -bootdisk scsi0
 ```
 
-10. Добавляем консоль TTY в виртуальную машину:
+9. Добавляем консоль TTY в виртуальную машину:
 
 ```
 qm set 2013 --serial0 socket --vga serial0
@@ -130,7 +118,7 @@ qm set 2013 --serial0 socket --vga serial0
 update VM 2013: -serial0 socket -vga serial0
 ```
 
-11. Добавляем сеть с ip-стеком в качестве dhcp:
+10. Добавляем сеть с ip-стеком в качестве dhcp:
 
 ```
 qm set 2013 --ipconfig0 ip=dhcp
@@ -143,7 +131,7 @@ qm set 2013 --ipconfig0 ip=dhcp
 update VM 2013: -ipconfig0 ip=dhcp
 ```
 
-12. При необходимости меняем размер диска на нужный нам:
+11. При необходимости меняем размер диска на нужный нам:
 
 ```
 qm resize 2013 scsi0 8G
@@ -159,7 +147,7 @@ qm resize 2013 scsi0 8G
   Logical volume pve/vm-2013-disk-0 successfully resized.
 ```
 
-13. Преобразуем готовую виртуальную машину в шаблон:
+12. Преобразуем готовую виртуальную машину в шаблон:
 
 ```
 qm template 2013
