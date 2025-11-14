@@ -89,7 +89,7 @@ echo "alias la='ls -la'" >> /etc/profile.d/bash-aliases.sh<br>
 Сменить имя хоста командой:
 
 ```
-sudo hostnamectl old-hostname new-hostname
+sudo hostnamectl set-hostname new-hostname
 ```
 
 Убедиться, что оно сменилось:
