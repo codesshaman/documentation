@@ -95,7 +95,7 @@ sudo hostnamectl set-hostname new-hostname
 Убедиться, что оно сменилось:
 
 ```
-sudo nano /etc/hostname
+sudo cat /etc/hostname
 ```
 
 Добавить хост в
