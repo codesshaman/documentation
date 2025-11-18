@@ -39,6 +39,7 @@
 ***
 
 ### Release
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Узнать версию linux
 
 ```
