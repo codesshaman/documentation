@@ -115,40 +115,34 @@ sudo nano /etc/hosts
 ### Ssh
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 
-Создать папку:
-
-```
-mkdir ~/.ssh
-```
-
 Права для ``.ssh``:
 
 ```
-chmod 700 ~/.ssh
+mkdir ~/.ssh && chmod 700 ~/.ssh
 ```
 
 Права для ``known_hosts``
 
 ```
-chmod 644 ~/.ssh/known_hosts
+touch ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
 ```
 
 Права для ``known_hosts``
 
 ```
-chmod 644 ~/.ssh/authorized_keys
+touch ~/.ssh/authorized_keys && chmod 644 ~/.ssh/authorized_keys
 ```
 
 Права для ``config``
 
 ```
-sudo chmod 644 ~/.ssh/config
+touch ~/.ssh/config && sudo chmod 644 ~/.ssh/config
 ```
 
 Права для ``id_rsa``
 
 ```
-sudo chmod 600 ~/.ssh/id_rsa
+touch ~/.ssh/id_rsa && sudo chmod 600 ~/.ssh/id_rsa
 ```
 
 ***
