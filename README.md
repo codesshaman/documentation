@@ -136,13 +136,13 @@ touch ~/.ssh/authorized_keys && chmod 644 ~/.ssh/authorized_keys
 Права для ``config``
 
 ```
-touch ~/.ssh/config && sudo chmod 644 ~/.ssh/config
+touch ~/.ssh/config && chmod 644 ~/.ssh/config
 ```
 
 Права для ``id_rsa``
 
 ```
-touch ~/.ssh/id_rsa && sudo chmod 600 ~/.ssh/id_rsa
+touch ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 ```
 
 ***
