@@ -2,6 +2,7 @@
 
 ### Оглавление
 + [Linux](https://github.com/codesshaman/documentation/#Linux "Linux")
+  - [Узнать версию ОС](https://github.com/codesshaman/documentation/#Release "Release")
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Создание алиасов в bash](https://github.com/codesshaman/documentation/#Aliases "Aliases")
   - [Смена имени хоста](https://github.com/codesshaman/documentation/#Hostname "Hostname")
@@ -34,6 +35,23 @@
   - [Настройка ротации логов](https://github.com/codesshaman/documentation/#LogRotation "LogRotation")
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 + [Инструкции](https://github.com/codesshaman/documentation/#Инструкции "Инструкции")
+
+***
+
+### Release
+> Узнать версию linux
+
+```
+cat /etc/os-release
+```
+
+```
+lsb_release -a
+```
+
+```
+cat /etc/*release
+```
 
 ***
 
