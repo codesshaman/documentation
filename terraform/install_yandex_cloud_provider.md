@@ -31,7 +31,7 @@ Bash automatic script:
 
 ```
 #!/bin/bash
-VERSION=0.133.0
+VERSION=0.171.0
 ARCH=linux_amd64
 
 mkdir -p /tmp/yandex-provider
