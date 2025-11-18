@@ -5,6 +5,7 @@
   - [Способы открытия файлов](https://github.com/codesshaman/documentation/#Notes "Notes")
   - [Создание алиасов в bash](https://github.com/codesshaman/documentation/#Aliases "Aliases")
   - [Смена имени хоста](https://github.com/codesshaman/documentation/#Hostname "Hostname")
+  - [Правильные права для .ssh](https://github.com/codesshaman/documentation/#Ssh "Ssh")
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
@@ -110,6 +111,47 @@ sudo nano /etc/hosts
 127.0.1.1 new-hostname
 ```
 
+***
+### Ssh
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+
+Создать папку:
+
+```
+mkdir ~/.ssh
+```
+
+Права для ``.ssh``:
+
+```
+chmod 700 ~/.ssh
+```
+
+Права для ``known_hosts``
+
+```
+chmod 644 ~/.ssh/known_hosts
+```
+
+Права для ``known_hosts``
+
+```
+chmod 644 ~/.ssh/authorized_keys
+```
+
+Права для ``config``
+
+```
+sudo chmod 644 ~/.ssh/config
+```
+
+Права для ``id_rsa``
+
+```
+sudo chmod 600 ~/.ssh/id_rsa
+```
+
+***
 ### Find
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
 > Поиск файлов в системе
