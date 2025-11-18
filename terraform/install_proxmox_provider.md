@@ -1,4 +1,4 @@
-# terraform_base_template
+# terraform proxmox provider
 
 ### Step 1. Install proxmox plugin
 
