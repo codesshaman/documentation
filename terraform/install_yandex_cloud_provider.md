@@ -1,7 +1,5 @@
 # terraform yandex cloud provider
 
-### Step 1. Install proxmox plugin
-
 Download [last release](https://github.com/yandex-cloud/terraform-provider-yandex/releases "yandex_cloud provider") of proxmox provider
 
 ```
