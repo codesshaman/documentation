@@ -1,8 +1,8 @@
-# terraform_base_template
+# terraform yandex cloud provider
 
 ### Step 1. Install proxmox plugin
 
-Download [last release](https://github.com/Telmate/terraform-provider-proxmox/releases "proxmox provider") of proxmox provider
+Download [last release](https://github.com/yandex-cloud/terraform-provider-yandex/releases "yandex_cloud provider") of proxmox provider
 
 Unpack archive. Copy plugin version. Create plugins directory if not exist:
 
