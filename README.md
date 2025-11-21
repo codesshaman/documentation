@@ -268,6 +268,12 @@ sudo useradd -m username
 sudo passwd username
 ```
 
+Задать оболочку пользователя
+
+```
+sudo chsh -s /bin/bash username
+```
+
 Добавить пользователя в одну или несколько групп
 
 ```
@@ -737,6 +743,7 @@ user-1007.journal
 
 ***
 Вы можете создавать свои комбинации!
+
 ### Инструкции
 + [Заголовки](https://github.com/AndreyKozhev/Markdown-format#заголовки "Заголовки")
 + [Выделение](https://github.com/AndreyKozhev/Markdown-format#выделение "Выделение")
