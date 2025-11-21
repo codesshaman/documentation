@@ -10,6 +10,7 @@
   - [Поиск файлов в системе](https://github.com/codesshaman/documentation/#Find "Find")
   - [Проверить свободные порты](https://github.com/codesshaman/documentation/#Ports "Ports")
   - [Вставка и замена текста](https://github.com/codesshaman/documentation/#Sed "Sed")
+  - [Создание пользователя](https://github.com/codesshaman/documentation/#CreateUser "Create Users")
   - [Информация о пользователях](https://github.com/codesshaman/documentation/#AboutUsers "About Users")
   - [Информация о процессах](https://github.com/codesshaman/documentation/#AboutProcesses "About Processes")
   - [Информация о пакетах](https://github.com/codesshaman/documentation/#AboutPackages "About Packages")
@@ -250,6 +251,52 @@ touch ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
 Дополнительно:
 
 ``grep -n 'TEXT' filename.txt | cut -d: -f1`` - вывод номера строки по тексту
+***
+### CreateUser
++ [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
+> Просмотр информации о пользователях и сессиях
+
+Создать пользователя с домашней папкой
+
+```
+sudo useradd -m username
+```
+
+Задать пароль пользователю
+
+```
+sudo passwd username
+```
+
+Добавить пользователя в одну или несколько групп
+
+```
+sudo usermod -aG group1,group2 username
+```
+Пример:
+
+```
+sudo usermod -aG docker,sudo www
+```
+
+Проверить, что пользователь добавлен в группы
+
+```
+groups username
+```
+
+Создать пользователя и сразу указать группу по умолчанию
+
+```
+sudo useradd -m -g main_group username
+```
+
+Создать пользователя со своей оболочкой (bash)
+
+```
+sudo useradd -m -s /bin/bash username
+```
+
 ***
 ### AboutUsers
 + [Оглавление](https://github.com/codesshaman/documentation/#Оглавление "Оглавление")
