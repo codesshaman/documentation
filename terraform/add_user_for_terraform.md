@@ -1,6 +1,10 @@
-1. Datacenter → Permissons → Users → Add | Named ``terraform``
+1. ### Create User
 
-2. Datacenter → Permissons → Roles → Create | Named ``TerraformProvision``
+Datacenter → Permissons → Users → Add | Named ``terraform``
+
+2. ### Create Role
+
+Datacenter → Permissons → Roles → Create | Named ``TerraformProvision``
 
 add next required permissions:
 
@@ -29,3 +33,18 @@ VM.Monitor
 VM.PowerMgmt
 ```
 
+3. ### Create Group
+
+Datacenter → Permissons → Groups → Create | Named ``terraform``
+
+4. ### Add Permissons
+
+Datacenter → Permissons → Add → Group Permissons
+
+Choose:
+
+Path: ``/``
+
+Group: ``terraform``
+
+Role: ````
