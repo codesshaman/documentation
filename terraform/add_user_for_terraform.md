@@ -47,4 +47,11 @@ Path: ``/``
 
 Group: ``terraform``
 
-Role: ````
+Role: ``TerraformProvision``
+
+5. ### Grant permissions to user:
+
+Datacenter → Permissons → Users | Choose ``terraform`` and click ``Edit``
+
+Choose Group ``terraform`` and click ``Ok``
+
