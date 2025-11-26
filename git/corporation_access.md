@@ -1,7 +1,7 @@
 1. Create corporate repo key:
 
 ```
-ssh-keygen -t ed25519 -C "backup-$(hostname)-$(date +%F)" -f ~/.ssh/corporate_repo_key
+ssh-keygen -t ed25519 -C "$(hostname)-$(date +%F)" -f ~/.ssh/corporate_repo_key
 ```
 
 2. Add key to the ssh agent:
