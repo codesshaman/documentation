@@ -1,4 +1,4 @@
 
 ```
-ssh-keygen -t ed25519 -C "backup-$(hostname)-$(date +%F)"
+ssh-keygen -t ed25519 -C "$(hostname)-$(date +%F)"
 ```
