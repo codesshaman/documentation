@@ -32,7 +32,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub user@dest
 ### Step 4. Check nopass login
 
 ```
-ssh -i ~/.ssh/id_ed25519 user@dest
+ssh -i ~/.ssh/id_ed25519 user@192.168.10.132 pwd
 ```
 
 ### Step 5. Start copy with nohup
